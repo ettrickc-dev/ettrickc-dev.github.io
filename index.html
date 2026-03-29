@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EasyLegalFiling.com</title>
+
+<link rel="icon" href="favicon.png">
+
+<style>
+:root{
+--blue:#2563eb;
+--dark:#0f172a;
+--gray:#64748b;
+--light:#f8fafc;
+--border:#e2e8f0;
+--green:#22c55e;
+}
+
+body{
+margin:0;
+font-family:Arial;
+background:var(--light);
+color:var(--dark);
+}
+
+.container{
+width:min(1100px,92%);
+margin:auto;
+}
+
+header{
+background:white;
+border-bottom:1px solid var(--border);
+padding:15px 0;
+}
+
+.logo img{
+height:50px;
+}
+
+.hero{
+padding:60px 0;
+text-align:center;
+}
+
+.hero h1{
+font-size:clamp(2rem,4vw,3rem);
+margin-bottom:15px;
+}
+
+.hero p{
+color:var(--gray);
+margin-bottom:25px;
+font-size:1.1rem;
+}
+
+.start-buttons{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+max-width:500px;
+margin:20px auto;
+}
+
+.btn{
+padding:15px;
+border-radius:10px;
+font-weight:700;
+text-decoration:none;
+display:block;
+}
+
+.btn-primary{
+background:var(--blue);
+color:white;
+}
+
+.btn-secondary{
+background:white;
+border:1px solid var(--border);
+color:var(--dark);
+}
+
+.trust{
+margin-top:20px;
+font-size:14px;
+color:var(--gray);
+}
+
+.section{
+padding:60px 0;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+border:1px solid var(--border);
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+text-align:center;
+}
+
+.card h3{
+margin-top:0;
+}
+
+.card p{
+color:var(--gray);
+}
+
+.badge{
+background:#ecfdf5;
+color:#065f46;
+padding:5px 10px;
+border-radius:999px;
+font-size:12px;
+display:inline-block;
+margin-bottom:10px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+text-align:center;
+}
+
+.feature{
+background:white;
+padding:20px;
+border-radius:10px;
+border:1px solid var(--border);
+}
+
+footer{
+background:var(--dark);
+color:white;
+padding:30px;
+text-align:center;
+margin-top:40px;
+}
+
+@media(max-width:900px){
+.cards,.features,.start-buttons{
+grid-template-columns:1fr;
+}
+}
+</style>
+
+<script>
+// SIMPLE CLICK TRACKING
+function trackClick(service){
+console.log("User clicked:", service);
+
+// OPTIONAL: send to Google Analytics later
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<div class="container logo">
+<img src="logo.png">
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+
+<h1>Start Your Legal Process the Right Way</h1>
+
+<p>Attorney-designed systems that help you complete legal filings faster, easier, and with fewer mistakes.</p>
+
+<div class="start-buttons">
+
+<a class="btn btn-primary" href="#services">Start Here</a>
+
+<a class="btn btn-secondary" href="#services">See My Options</a>
+
+</div>
+
+<div class="trust">
+✔ See your documents before you pay  
+✔ Designed using real legal workflows  
+✔ Used by people across the United States  
+</div>
+
+</div>
+</section>
+
+<section id="services" class="section">
+<div class="container">
+
+<h2 style="text-align:center;">Choose Your Service</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="badge">Most Popular</div>
+<h3>Prenup / Postnup</h3>
+<p>Protect your assets and avoid future legal problems before they happen.</p>
+<a class="btn btn-primary" href="https://avoiddivorceproblems.com" target="_blank" onclick="trackClick('prenup')">Start Now</a>
+</div>
+
+<div class="card">
+<div class="badge">Fast Filing</div>
+<h3>Uncontested Divorce</h3>
+<p>Get your divorce paperwork prepared and filed with a streamlined process.</p>
+<a class="btn btn-primary" href="https://easydivorcefiling.com" target="_blank" onclick="trackClick('divorce')">Start Now</a>
+</div>
+
+<div class="card">
+<div class="badge">Step-by-Step</div>
+<h3>Immigration Filing</h3>
+<p>Follow structured systems designed to reduce mistakes and delays.</p>
+<a class="btn btn-primary" href="https://easyimmigrationfiling.com" target="_blank" onclick="trackClick('immigration')">Start Now</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2 style="text-align:center;">Why This Works</h2>
+
+<div class="features">
+
+<div class="feature"><strong>Simple</strong><br>No confusion. Just clear next steps.</div>
+
+<div class="feature"><strong>Fast</strong><br>Get to the right service instantly.</div>
+
+<div class="feature"><strong>Structured</strong><br>Built from real legal workflows.</div>
+
+<div class="feature"><strong>Proven</strong><br>Designed for real-world results.</div>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+EasyLegalFiling.com  
+<br><br>
+<span style="font-size:12px;opacity:.6;">
+Add your disclaimer, privacy policy, and terms before publishing
+</span>
+</footer>
+
+</body>
+</html>
