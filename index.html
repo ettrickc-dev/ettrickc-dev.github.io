@@ -1,263 +1,1207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>EasyLegalFiling.com</title>
+  <title>EasyLegalFiling.com | See Your Legal Documents Before You Pay</title>
+  <meta
+    name="description"
+    content="Create divorce, prenup, postnup, and immigration documents online. See your documents before you pay. Choose the right service, get your starting link, or chat on WhatsApp."
+  />
+  <meta
+    name="keywords"
+    content="legal documents online, divorce filing, uncontested divorce, prenup, postnup, immigration filing, preview before pay, legal forms"
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f172a" />
 
-<link rel="icon" href="favicon.png">
+  <meta property="og:title" content="EasyLegalFiling.com | See Your Legal Documents Before You Pay" />
+  <meta
+    property="og:description"
+    content="Choose the legal service you need, see your documents before you pay, and start with a simple online process."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://easylegalfiling.com/" />
+  <meta property="og:image" content="https://easylegalfiling.com/og-image.jpg" />
 
-<style>
-:root{
---blue:#2563eb;
---dark:#0f172a;
---gray:#64748b;
---light:#f8fafc;
---border:#e2e8f0;
---green:#22c55e;
-}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EasyLegalFiling.com | See Your Legal Documents Before You Pay" />
+  <meta
+    name="twitter:description"
+    content="Create divorce, prenup, postnup, and immigration documents online. Preview first. Pay only if you want the final package."
+  />
+  <meta name="twitter:image" content="https://easylegalfiling.com/og-image.jpg" />
 
-body{
-margin:0;
-font-family:Arial;
-background:var(--light);
-color:var(--dark);
-}
+  <link rel="icon" href="favicon.png" />
+  <link rel="canonical" href="https://easylegalfiling.com/" />
 
-.container{
-width:min(1100px,92%);
-margin:auto;
-}
+  <style>
+    :root{
+      --blue:#2563eb;
+      --blue-dark:#1d4ed8;
+      --dark:#0f172a;
+      --gray:#475569;
+      --gray-light:#64748b;
+      --light:#f8fafc;
+      --white:#ffffff;
+      --border:#e2e8f0;
+      --green:#16a34a;
+      --green-dark:#15803d;
+      --red-bg:#fff7ed;
+      --red-border:#fdba74;
+      --red-text:#9a3412;
+      --shadow:0 12px 30px rgba(15,23,42,.08);
+      --radius:18px;
+    }
 
-header{
-background:white;
-border-bottom:1px solid var(--border);
-padding:15px 0;
-}
+    *{box-sizing:border-box;}
 
-.logo img{
-height:50px;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-.hero{
-padding:60px 0;
-text-align:center;
-}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--light);
+      color:var(--dark);
+      line-height:1.55;
+    }
 
-.hero h1{
-font-size:clamp(2rem,4vw,3rem);
-margin-bottom:15px;
-}
+    a{
+      color:inherit;
+    }
 
-.hero p{
-color:var(--gray);
-margin-bottom:25px;
-font-size:1.1rem;
-}
+    .container{
+      width:min(1160px,92%);
+      margin:auto;
+    }
 
-.start-buttons{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-max-width:500px;
-margin:20px auto;
-}
+    .topbar{
+      background:var(--dark);
+      color:#cbd5e1;
+      font-size:14px;
+      padding:10px 0;
+      text-align:center;
+    }
 
-.btn{
-padding:15px;
-border-radius:10px;
-font-weight:700;
-text-decoration:none;
-display:block;
-}
+    header{
+      background:rgba(255,255,255,.96);
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(10px);
+    }
 
-.btn-primary{
-background:var(--blue);
-color:white;
-}
+    .header-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:16px 0;
+    }
 
-.btn-secondary{
-background:white;
-border:1px solid var(--border);
-color:var(--dark);
-}
+    .brand{
+      text-decoration:none;
+      display:block;
+      min-width:0;
+    }
 
-.trust{
-margin-top:20px;
-font-size:14px;
-color:var(--gray);
-}
+    .brand-name{
+      font-size:clamp(1.3rem,2vw,1.8rem);
+      font-weight:800;
+      letter-spacing:-.02em;
+      color:var(--dark);
+    }
 
-.section{
-padding:60px 0;
-}
+    .brand-tagline{
+      font-size:14px;
+      color:var(--gray-light);
+      margin-top:2px;
+    }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
 
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
-border:1px solid var(--border);
-box-shadow:0 10px 20px rgba(0,0,0,0.05);
-text-align:center;
-}
+    .nav a{
+      text-decoration:none;
+      color:var(--gray);
+      font-weight:700;
+      font-size:14px;
+    }
 
-.card h3{
-margin-top:0;
-}
+    .nav a:hover{
+      color:var(--blue);
+    }
 
-.card p{
-color:var(--gray);
-}
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      font-weight:800;
+      border-radius:12px;
+      padding:14px 18px;
+      transition:.2s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
 
-.badge{
-background:#ecfdf5;
-color:#065f46;
-padding:5px 10px;
-border-radius:999px;
-font-size:12px;
-display:inline-block;
-margin-bottom:10px;
-}
+    .btn:hover{
+      transform:translateY(-1px);
+    }
 
-.features{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-text-align:center;
-}
+    .btn-primary{
+      background:var(--blue);
+      color:#fff;
+      box-shadow:0 10px 20px rgba(37,99,235,.18);
+    }
 
-.feature{
-background:white;
-padding:20px;
-border-radius:10px;
-border:1px solid var(--border);
-}
+    .btn-primary:hover{
+      background:var(--blue-dark);
+    }
 
-footer{
-background:var(--dark);
-color:white;
-padding:30px;
-text-align:center;
-margin-top:40px;
-}
+    .btn-secondary{
+      background:#fff;
+      color:var(--dark);
+      border-color:var(--border);
+    }
 
-@media(max-width:900px){
-.cards,.features,.start-buttons{
-grid-template-columns:1fr;
-}
-}
-</style>
+    .btn-secondary:hover{
+      border-color:#cbd5e1;
+      background:#f8fafc;
+    }
 
-<script>
-// SIMPLE CLICK TRACKING
-function trackClick(service){
-console.log("User clicked:", service);
+    .btn-green{
+      background:var(--green);
+      color:#fff;
+      box-shadow:0 10px 20px rgba(22,163,74,.18);
+    }
 
-// OPTIONAL: send to Google Analytics later
-}
-</script>
+    .btn-green:hover{
+      background:var(--green-dark);
+    }
 
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:72px 0 42px;
+      background:
+        radial-gradient(circle at top right, rgba(37,99,235,.10), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:32px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      background:#eff6ff;
+      color:#1d4ed8;
+      border:1px solid #bfdbfe;
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:16px;
+    }
+
+    .hero h1{
+      font-size:clamp(2.2rem,5vw,4rem);
+      line-height:1.02;
+      margin:0 0 16px;
+      letter-spacing:-.03em;
+    }
+
+    .hero p{
+      margin:0 0 22px;
+      color:var(--gray);
+      font-size:1.08rem;
+      max-width:700px;
+    }
+
+    .hero-cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:18px;
+    }
+
+    .microtrust{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      color:var(--gray);
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .hero-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+    }
+
+    .hero-card h3{
+      margin:0 0 12px;
+      font-size:1.3rem;
+    }
+
+    .hero-card p{
+      margin:0 0 16px;
+      color:var(--gray);
+      font-size:15px;
+    }
+
+    .steps{
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .step{
+      display:grid;
+      grid-template-columns:40px 1fr;
+      gap:12px;
+      align-items:start;
+      padding:12px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#f8fafc;
+    }
+
+    .step-number{
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
+      border-radius:999px;
+      background:var(--dark);
+      color:#fff;
+      font-weight:800;
+    }
+
+    .section{
+      padding:70px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:clamp(1.7rem,3vw,2.5rem);
+      margin:0 0 12px;
+      letter-spacing:-.02em;
+    }
+
+    .section-subtitle{
+      text-align:center;
+      color:var(--gray);
+      max-width:760px;
+      margin:0 auto 34px;
+      font-size:1.05rem;
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+
+    .badge{
+      display:inline-block;
+      width:max-content;
+      padding:7px 11px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:14px;
+    }
+
+    .badge-blue{
+      background:#eff6ff;
+      color:#1d4ed8;
+      border:1px solid #bfdbfe;
+    }
+
+    .badge-green{
+      background:#ecfdf5;
+      color:#166534;
+      border:1px solid #86efac;
+    }
+
+    .badge-orange{
+      background:#fff7ed;
+      color:#9a3412;
+      border:1px solid #fdba74;
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:1.35rem;
+    }
+
+    .card p{
+      color:var(--gray);
+      margin:0 0 18px;
+    }
+
+    .card ul{
+      margin:0 0 22px 18px;
+      padding:0;
+      color:var(--gray);
+    }
+
+    .card li{
+      margin-bottom:8px;
+    }
+
+    .card .btn{
+      margin-top:auto;
+      text-align:center;
+    }
+
+    .fear-box{
+      background:var(--red-bg);
+      border:1px solid var(--red-border);
+      border-radius:var(--radius);
+      padding:28px;
+    }
+
+    .fear-box h2{
+      margin:0 0 10px;
+      font-size:clamp(1.6rem,3vw,2.2rem);
+    }
+
+    .fear-box p{
+      margin:0 0 18px;
+      color:var(--red-text);
+      max-width:780px;
+    }
+
+    .fear-list{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .fear-item{
+      background:#fff;
+      border:1px solid #fed7aa;
+      border-radius:14px;
+      padding:16px;
+      color:#7c2d12;
+      font-weight:700;
+      min-height:88px;
+    }
+
+    .lead-box{
+      background:linear-gradient(135deg,#0f172a 0%, #1e293b 100%);
+      color:#fff;
+      border-radius:var(--radius);
+      padding:34px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .lead-box h2{
+      margin:0 0 10px;
+      font-size:clamp(1.7rem,3vw,2.4rem);
+    }
+
+    .lead-box p{
+      margin:0;
+      color:#cbd5e1;
+    }
+
+    .lead-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:flex-start;
+    }
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .feature{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .feature-title{
+      font-size:1.05rem;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+
+    .feature p{
+      margin:0;
+      color:var(--gray);
+      font-size:15px;
+    }
+
+    .proof-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .proof{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .proof-number{
+      font-size:2rem;
+      font-weight:900;
+      margin-bottom:6px;
+      color:var(--dark);
+    }
+
+    .proof-label{
+      color:var(--gray);
+      font-size:15px;
+      font-weight:700;
+    }
+
+    .proof-note{
+      margin-top:10px;
+      font-size:12px;
+      color:#94a3b8;
+    }
+
+    .faq{
+      display:grid;
+      gap:14px;
+      max-width:900px;
+      margin:auto;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px 20px;
+      box-shadow:var(--shadow);
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      list-style:none;
+    }
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
+
+    details p{
+      margin:14px 0 0;
+      color:var(--gray);
+    }
+
+    footer{
+      background:var(--dark);
+      color:#fff;
+      padding:48px 0 24px;
+      margin-top:30px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      gap:28px;
+      margin-bottom:26px;
+    }
+
+    .footer-brand h3{
+      margin:0 0 8px;
+      font-size:1.4rem;
+    }
+
+    .footer-brand p{
+      color:#cbd5e1;
+      margin:0;
+      max-width:500px;
+    }
+
+    .footer-links h4{
+      margin:0 0 10px;
+      font-size:1rem;
+    }
+
+    .footer-links a{
+      display:block;
+      color:#cbd5e1;
+      text-decoration:none;
+      margin-bottom:8px;
+      font-size:15px;
+    }
+
+    .footer-links a:hover{
+      color:#fff;
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.12);
+      padding-top:20px;
+      color:#cbd5e1;
+      font-size:13px;
+    }
+
+    .legal-page{
+      max-width:980px;
+      margin:auto;
+      padding:40px 0;
+    }
+
+    .legal-page h1{
+      font-size:2rem;
+      margin-bottom:12px;
+    }
+
+    .legal-page h2{
+      margin-top:28px;
+      font-size:1.2rem;
+    }
+
+    .legal-page p, .legal-page li{
+      color:var(--gray);
+    }
+
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:1100;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:#25D366;
+      color:#fff;
+      text-decoration:none;
+      padding:14px 16px;
+      border-radius:999px;
+      font-weight:800;
+      box-shadow:0 14px 28px rgba(0,0,0,.18);
+    }
+
+    .whatsapp-float:hover{
+      transform:translateY(-1px);
+    }
+
+    .small-note{
+      font-size:13px;
+      color:#94a3b8;
+      margin-top:12px;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .lead-box,
+      .footer-grid,
+      .service-grid,
+      .features,
+      .proof-grid,
+      .fear-list{
+        grid-template-columns:1fr;
+      }
+
+      .header-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav{
+        width:100%;
+      }
+
+      .hero{
+        padding-top:44px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .hero-cta,
+      .lead-actions{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+        text-align:center;
+      }
+
+      .microtrust{
+        flex-direction:column;
+        gap:8px;
+      }
+
+      .whatsapp-float{
+        right:12px;
+        bottom:12px;
+        padding:13px 14px;
+      }
+    }
+  </style>
+
+  <script>
+    const GOOGLE_FORM_URL = "https://forms.gle/REPLACE_WITH_YOUR_GOOGLE_FORM_LINK";
+    const WHATSAPP_NUMBER = "17186756729";
+    const WHATSAPP_MESSAGE = encodeURIComponent(
+      "Hi, I want help choosing the right EasyLegalFiling service so I can see my documents before paying."
+    );
+
+    function trackClick(service){
+      console.log("User clicked:", service);
+
+      if (window.gtag) {
+        gtag("event", "service_click", {
+          service_name: service
+        });
+      }
+    }
+
+    function openGoogleForm() {
+      window.open(GOOGLE_FORM_URL, "_blank", "noopener");
+    }
+
+    function openWhatsApp() {
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`, "_blank", "noopener");
+    }
+  </script>
+
+  <!--
+    INTERNAL DIRECTIONS FOR YOU ONLY (NOT SHOWN TO USERS)
+
+    1) Replace GOOGLE_FORM_URL in the script above with your real Google Form link.
+    2) Replace og-image.jpg with a real social share image on your domain.
+    3) If you later have verified testimonials, verified user counts, or verified years in practice,
+       replace the current neutral proof blocks with true figures only.
+    4) If you set up Google Analytics:
+       - paste the GA tag code in the head above this comment
+       - track service clicks with the existing trackClick() function
+    5) You can later add FAQ schema and organization schema in JSON-LD below.
+       Keep only true, verifiable facts.
+  -->
+
+  <!-- SCHEMA-READY PLACEHOLDER: replace only with verified facts -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LegalService",
+    "name":"EasyLegalFiling.com",
+    "url":"https://easylegalfiling.com/",
+    "description":"Online legal document generation platform for divorce, prenup, postnup, and immigration filings.",
+    "areaServed":"United States",
+    "sameAs":[
+      "https://easydivorcefiling.com/",
+      "https://avoiddivorceproblems.com/",
+      "https://easyimmigrationfiling.com/"
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
-<header>
-<div class="container logo">
-<img src="logo.png">
-</div>
-</header>
+  <div class="topbar">
+    See your documents before you pay. Choose the right service and start online.
+  </div>
 
-<section class="hero">
-<div class="container">
+  <header>
+    <div class="container header-inner">
+      <a href="https://easylegalfiling.com/" class="brand" aria-label="EasyLegalFiling home">
+        <div class="brand-name">EasyLegalFiling.com</div>
+        <div class="brand-tagline">Online legal document systems designed to help you start the right way</div>
+      </a>
 
-<h1>Start Your Legal Process the Right Way</h1>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#faq">FAQ</a>
+        <a href="javascript:void(0)" onclick="openGoogleForm()" class="btn btn-secondary">Get My Starting Link</a>
+      </nav>
+    </div>
+  </header>
 
-<p>Attorney-designed systems that help you complete legal filings faster, easier, and with fewer mistakes.</p>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">See Your Documents Before You Pay</div>
 
-<div class="start-buttons">
+          <h1>Choose the right legal service before you waste time, money, or make a costly mistake.</h1>
 
-<a class="btn btn-primary" href="#services">Start Here</a>
+          <p>
+            Create divorce, prenup, postnup, and immigration documents online with a simpler process.
+            Start with the service that fits your situation, review your path, and see your documents before paying.
+          </p>
 
-<a class="btn btn-secondary" href="#services">See My Options</a>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#services">Choose My Service</a>
+            <a class="btn btn-secondary" href="javascript:void(0)" onclick="openGoogleForm()">Get My Starting Link</a>
+            <a class="btn btn-green" href="javascript:void(0)" onclick="openWhatsApp()">WhatsApp for Help</a>
+          </div>
 
-</div>
+          <div class="microtrust">
+            <span>✔ Preview before payment</span>
+            <span>✔ Built around real legal workflows</span>
+            <span>✔ Broad U.S. service options</span>
+          </div>
+        </div>
 
-<div class="trust">
-✔ See your documents before you pay  
-✔ Designed using real legal workflows  
-✔ Used by people across the United States  
-</div>
+        <div class="hero-card">
+          <h3>How it works</h3>
+          <p>
+            Start with the right category, follow the guided process, and see your documents before you pay.
+          </p>
 
-</div>
-</section>
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div>
+                <strong>Choose your service</strong><br>
+                Divorce, prenup/postnup, or immigration.
+              </div>
+            </div>
 
-<section id="services" class="section">
-<div class="container">
+            <div class="step">
+              <div class="step-number">2</div>
+              <div>
+                <strong>Answer guided questions</strong><br>
+                Follow the path designed for your situation.
+              </div>
+            </div>
 
-<h2 style="text-align:center;">Choose Your Service</h2>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div>
+                <strong>See your documents before you pay</strong><br>
+                Review your result first, then decide.
+              </div>
+            </div>
+          </div>
 
-<div class="cards">
+          <div class="small-note">
+            Need help choosing? Use the WhatsApp button and ask which service fits your situation best.
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-<div class="badge">Most Popular</div>
-<h3>Prenup / Postnup</h3>
-<p>Protect your assets and avoid future legal problems before they happen.</p>
-<a class="btn btn-primary" href="https://avoiddivorceproblems.com" target="_blank" onclick="trackClick('prenup')">Start Now</a>
-</div>
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title">Choose Your Service</h2>
+        <p class="section-subtitle">
+          Pick the path that fits your situation. Each option is designed to get you to the right starting point fast.
+        </p>
 
-<div class="card">
-<div class="badge">Fast Filing</div>
-<h3>Uncontested Divorce</h3>
-<p>Get your divorce paperwork prepared and filed with a streamlined process.</p>
-<a class="btn btn-primary" href="https://easydivorcefiling.com" target="_blank" onclick="trackClick('divorce')">Start Now</a>
-</div>
+        <div class="service-grid">
+          <article class="card">
+            <div class="badge badge-blue">Protect Before Problems Start</div>
+            <h3>Prenup / Postnup</h3>
+            <p>
+              Take the first step toward protecting assets, clarifying expectations, and avoiding future disputes.
+            </p>
+            <ul>
+              <li>Check whether you may need an agreement</li>
+              <li>Understand the right starting path</li>
+              <li>See your documents before you pay</li>
+            </ul>
+            <a
+              class="btn btn-primary"
+              href="https://avoiddivorceproblems.com"
+              target="_blank"
+              rel="noopener"
+              onclick="trackClick('prenup-postnup')"
+            >
+              Check My Need for a Prenup
+            </a>
+          </article>
 
-<div class="card">
-<div class="badge">Step-by-Step</div>
-<h3>Immigration Filing</h3>
-<p>Follow structured systems designed to reduce mistakes and delays.</p>
-<a class="btn btn-primary" href="https://easyimmigrationfiling.com" target="_blank" onclick="trackClick('immigration')">Start Now</a>
-</div>
+          <article class="card">
+            <div class="badge badge-green">Fastest Path to Start</div>
+            <h3>Uncontested Divorce</h3>
+            <p>
+              Start your divorce paperwork online with a simpler process designed to reduce confusion and avoid common mistakes.
+            </p>
+            <ul>
+              <li>Clear guided starting point</li>
+              <li>Designed for faster action</li>
+              <li>See your documents before you pay</li>
+            </ul>
+            <a
+              class="btn btn-primary"
+              href="https://easydivorcefiling.com"
+              target="_blank"
+              rel="noopener"
+              onclick="trackClick('divorce')"
+            >
+              Start Divorce Service
+            </a>
+          </article>
 
-</div>
+          <article class="card">
+            <div class="badge badge-orange">Structured Immigration Path</div>
+            <h3>Immigration Filing</h3>
+            <p>
+              Follow a more organized process for immigration-related document preparation with guided steps designed to reduce mistakes.
+            </p>
+            <ul>
+              <li>Structured question flow</li>
+              <li>Built to reduce delays and confusion</li>
+              <li>See your documents before you pay</li>
+            </ul>
+            <a
+              class="btn btn-primary"
+              href="https://easyimmigrationfiling.com"
+              target="_blank"
+              rel="noopener"
+              onclick="trackClick('immigration')"
+            >
+              Start Immigration Service
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-</div>
-</section>
+    <section class="section">
+      <div class="container">
+        <div class="fear-box">
+          <h2>What happens when people start the wrong way</h2>
+          <p>
+            Many people lose time and money before they even reach the correct process. Starting with the wrong paperwork,
+            the wrong service, or the wrong assumptions can create delays, confusion, and unnecessary expense.
+          </p>
 
-<section class="section">
-<div class="container">
+          <div class="fear-list">
+            <div class="fear-item">Wrong forms can delay progress for weeks or months</div>
+            <div class="fear-item">Paying too early can lock you into the wrong path</div>
+            <div class="fear-item">Simple mistakes can create expensive cleanup later</div>
+            <div class="fear-item">Choosing the wrong service wastes time you may not have</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<h2 style="text-align:center;">Why This Works</h2>
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <h2 class="section-title">Why this works</h2>
+        <p class="section-subtitle">
+          The goal is simple: help people choose the right path faster, reduce confusion, and make it easier to begin.
+        </p>
 
-<div class="features">
+        <div class="features">
+          <div class="feature">
+            <div class="feature-title">Simple</div>
+            <p>No clutter. No guessing. Just a clear next step based on what you need.</p>
+          </div>
 
-<div class="feature"><strong>Simple</strong><br>No confusion. Just clear next steps.</div>
+          <div class="feature">
+            <div class="feature-title">Fast</div>
+            <p>Get to the right service quickly instead of digging through a generic legal website.</p>
+          </div>
 
-<div class="feature"><strong>Fast</strong><br>Get to the right service instantly.</div>
+          <div class="feature">
+            <div class="feature-title">Structured</div>
+            <p>Built around guided workflows designed to help reduce common mistakes.</p>
+          </div>
 
-<div class="feature"><strong>Structured</strong><br>Built from real legal workflows.</div>
+          <div class="feature">
+            <div class="feature-title">Preview First</div>
+            <p>See your documents before paying so you understand the path before committing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="feature"><strong>Proven</strong><br>Designed for real-world results.</div>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Why visitors choose this kind of system</h2>
+        <p class="section-subtitle">
+          People looking for legal help online usually want speed, clarity, and a lower-risk starting point.
+        </p>
 
-</div>
+        <div class="proof-grid">
+          <div class="proof">
+            <div class="proof-number">Preview First</div>
+            <div class="proof-label">See documents before paying</div>
+            <div class="proof-note">Use this instead of unverified statistics.</div>
+          </div>
 
-</div>
-</section>
+          <div class="proof">
+            <div class="proof-number">Guided Path</div>
+            <div class="proof-label">Start with the right service faster</div>
+            <div class="proof-note">Stronger than a generic contact page.</div>
+          </div>
 
-<footer>
-EasyLegalFiling.com  
-<br><br>
-<span style="font-size:12px;opacity:.6;">
-Add your disclaimer, privacy policy, and terms before publishing
-</span>
-</footer>
+          <div class="proof">
+            <div class="proof-number">Online Access</div>
+            <div class="proof-label">Start from anywhere in the U.S.</div>
+            <div class="proof-note">Broad positioning without overpromising.</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="container">
+        <div class="lead-box">
+          <div>
+            <h2>Not sure which service fits your situation?</h2>
+            <p>
+              Get your starting link and choose the right next step faster. If you want help deciding, use WhatsApp and ask which service matches your situation.
+            </p>
+          </div>
+
+          <div class="lead-actions">
+            <a class="btn btn-primary" href="javascript:void(0)" onclick="openGoogleForm()">Get My Starting Link</a>
+            <a class="btn btn-green" href="javascript:void(0)" onclick="openWhatsApp()">WhatsApp for Help</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Answers to the questions many visitors have before choosing a service.
+        </p>
+
+        <div class="faq">
+          <details>
+            <summary>Can I really see my documents before I pay?</summary>
+            <p>
+              Yes. The service paths are built so users can review their documents before deciding whether to pay for the final package.
+            </p>
+          </details>
+
+          <details>
+            <summary>Which service should I choose if I’m not sure where I fit?</summary>
+            <p>
+              Use the “Get My Starting Link” button or WhatsApp for help choosing the right path based on your situation.
+            </p>
+          </details>
+
+          <details>
+            <summary>Is this available only in one state?</summary>
+            <p>
+              The site is positioned broadly for U.S. visitors, but each service may have its own process details depending on the type of filing.
+            </p>
+          </details>
+
+          <details>
+            <summary>What is the fastest way to get started?</summary>
+            <p>
+              Click “Choose My Service” if you already know what you need. If you do not, use “Get My Starting Link” or WhatsApp for help.
+            </p>
+          </details>
+
+          <details>
+            <summary>Does using this website create an attorney-client relationship?</summary>
+            <p>
+              No. Use of the website, forms, messages, or information does not by itself create an attorney-client relationship.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>EasyLegalFiling.com</h3>
+          <p>
+            Choose the legal service you need, start with a simpler online path, and see your documents before you pay.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Services</h4>
+          <a href="https://easydivorcefiling.com" target="_blank" rel="noopener">Uncontested Divorce</a>
+          <a href="https://avoiddivorceproblems.com" target="_blank" rel="noopener">Prenup / Postnup</a>
+          <a href="https://easyimmigrationfiling.com" target="_blank" rel="noopener">Immigration Filing</a>
+          <a href="javascript:void(0)" onclick="openGoogleForm()">Get My Starting Link</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="#privacy-policy">Privacy Policy</a>
+          <a href="#terms-of-use">Terms of Use</a>
+          <a href="#attorney-advertising">Attorney Advertising</a>
+          <a href="#no-attorney-client">No Attorney-Client Relationship</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 EasyLegalFiling.com. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp-float"
+    href="javascript:void(0)"
+    onclick="openWhatsApp()"
+    aria-label="Chat on WhatsApp"
+  >
+    <span>WhatsApp for Help</span>
+  </a>
+
+  <section class="section" id="privacy-policy">
+    <div class="container legal-page">
+      <h1>Privacy Policy</h1>
+      <p>
+        EasyLegalFiling.com values your privacy. This Privacy Policy explains, in general terms, how information may be collected, used, and protected when you use this website.
+      </p>
+
+      <h2>Information You Provide</h2>
+      <p>
+        If you submit information through a contact form, intake form, Google Form, WhatsApp message, or related feature, that information may include your name, contact details, and information about your legal matter or requested service.
+      </p>
+
+      <h2>How Information May Be Used</h2>
+      <p>
+        Information submitted through the website may be used to respond to inquiries, provide access to the correct service path, improve the website, and communicate about requested services or next steps.
+      </p>
+
+      <h2>Third-Party Tools</h2>
+      <p>
+        This website may use third-party tools or services, including hosting providers, analytics tools, communication tools, scheduling tools, form tools, and linked service platforms. Those tools may collect or process information according to their own policies.
+      </p>
+
+      <h2>No Guarantee of Confidentiality Before Formal Engagement</h2>
+      <p>
+        Do not send highly sensitive or confidential information through the website or messaging tools unless and until you are instructed to do so through an appropriate channel. Submission of information alone does not create an attorney-client relationship.
+      </p>
+
+      <h2>Updates</h2>
+      <p>
+        This policy may be updated from time to time. Continued use of the website after changes are posted constitutes acceptance of the updated policy.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="terms-of-use">
+    <div class="container legal-page">
+      <h1>Terms of Use</h1>
+      <p>
+        By using EasyLegalFiling.com, you agree to these Terms of Use. If you do not agree, do not use the website.
+      </p>
+
+      <h2>Informational and Service Access Purposes</h2>
+      <p>
+        This website provides general information about available document-generation and legal-service-related paths and may provide access to guided workflows or related tools.
+      </p>
+
+      <h2>No Guarantee of Outcome</h2>
+      <p>
+        Use of the website or any workflow does not guarantee any legal result, court result, agency result, approval, acceptance, or filing success.
+      </p>
+
+      <h2>User Responsibility</h2>
+      <p>
+        You are responsible for reviewing information you provide, confirming its accuracy, and determining whether a service fits your situation. You should not rely on this website as a substitute for individualized legal advice unless a formal attorney-client relationship has been established separately.
+      </p>
+
+      <h2>External Links</h2>
+      <p>
+        This site links to related service websites and third-party tools. EasyLegalFiling.com is not responsible for third-party content, systems, outages, or policies.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        These Terms may be changed at any time by posting an updated version on the website.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="attorney-advertising">
+    <div class="container legal-page">
+      <h1>Attorney Advertising</h1>
+      <p>
+        This website may be considered attorney advertising under applicable rules in some jurisdictions.
+      </p>
+
+      <h2>No Prior Results Guarantee Similar Outcome</h2>
+      <p>
+        Any descriptions of services, workflows, or examples are not guarantees that the same or similar result can be achieved in every matter.
+      </p>
+
+      <h2>Jurisdictional Limits</h2>
+      <p>
+        Availability of legal services, attorney involvement, and legal advice may be limited by jurisdiction, licensing rules, and the facts of a specific matter.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="no-attorney-client">
+    <div class="container legal-page">
+      <h1>No Attorney-Client Relationship</h1>
+      <p>
+        Use of this website, including viewing pages, submitting forms, sending messages, using WhatsApp, or receiving a starting link, does not by itself create an attorney-client relationship.
+      </p>
+
+      <h2>Formal Relationship Required</h2>
+      <p>
+        An attorney-client relationship is created only through an appropriate separate agreement and only after conflicts review and acceptance where required.
+      </p>
+
+      <h2>Do Not Assume Representation</h2>
+      <p>
+        Until a formal engagement is confirmed, you should not assume that any attorney is representing you, monitoring deadlines, or responsible for your matter.
+      </p>
+    </div>
+  </section>
 </body>
 </html>
