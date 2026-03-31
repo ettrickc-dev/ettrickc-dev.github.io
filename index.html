@@ -5,157 +5,327 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>EasyLegalFiling | See Your Legal Documents Before You Pay</title>
+
 <meta name="description" content="Create divorce, prenup, postnup, and immigration documents online. See your legal documents before you pay.">
+
 <link rel="icon" type="image/png" href="FAVICON.png">
 
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#0f172a;line-height:1.5}
-.container{width:min(1100px,92%);margin:auto}
-header{background:#fff;border-bottom:1px solid #e2e8f0;padding:15px 0;position:sticky;top:0;z-index:1000}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#0f172a}
-.brand img{height:48px;width:auto}
-.brand-name{font-weight:800;font-size:22px}
-.brand-tag{font-size:12px;color:#64748b}
-.hero{text-align:center;padding:64px 0;background:linear-gradient(180deg,#fff 0%,#f8fafc 100%)}
-.hero h1{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 15px}
-.hero p{color:#64748b;font-size:1.08rem;max-width:720px;margin:0 auto 24px}
-.button-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{padding:15px 20px;border-radius:12px;font-weight:700;text-decoration:none;display:inline-block;border:none;cursor:pointer;font-size:16px}
-.btn-primary{background:#2563eb;color:#fff}
-.btn-secondary{background:#fff;border:1px solid #e2e8f0;color:#0f172a}
-.btn-green{background:#22c55e;color:#fff}
-.section{padding:54px 0}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:#fff;padding:25px;border-radius:14px;border:1px solid #e2e8f0;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.04)}
-.card h3{margin-top:0}
-.card p{color:#64748b}
-.notice{margin-top:10px;font-size:13px;color:#94a3b8}
-.cta-box{background:#fff;padding:32px;border-radius:16px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 8px 20px rgba(0,0,0,.04)}
-.whatsapp{
-position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;
-padding:14px 18px;border-radius:999px;text-decoration:none;font-weight:700;
-box-shadow:0 10px 20px rgba(0,0,0,.15);z-index:1001
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f8fafc;
+color:#0f172a;
+line-height:1.5;
 }
-footer{padding:30px;background:#0f172a;color:#fff;text-align:center}
-footer small{color:#cbd5e1}
-@media(max-width:900px){.cards{grid-template-columns:1fr}}
+
+.container{
+width:min(1100px,92%);
+margin:auto;
+}
+
+header{
+background:#fff;
+border-bottom:1px solid #e2e8f0;
+padding:15px 0;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+color:#0f172a;
+}
+
+.brand img{
+height:48px;
+}
+
+.brand-name{
+font-weight:800;
+font-size:22px;
+}
+
+.brand-tag{
+font-size:12px;
+color:#64748b;
+}
+
+.hero{
+text-align:center;
+padding:60px 0;
+background:linear-gradient(180deg,#fff 0%,#f8fafc 100%);
+}
+
+.hero h1{
+font-size:clamp(2rem,4vw,3rem);
+margin-bottom:15px;
+}
+
+.hero p{
+color:#64748b;
+max-width:700px;
+margin:auto;
+margin-bottom:25px;
+}
+
+.button-row{
+display:flex;
+gap:12px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 20px;
+border-radius:12px;
+font-weight:700;
+text-decoration:none;
+display:inline-block;
+cursor:pointer;
+}
+
+.btn-primary{
+background:#2563eb;
+color:white;
+}
+
+.btn-secondary{
+background:white;
+border:1px solid #e2e8f0;
+color:#0f172a;
+}
+
+.btn-green{
+background:#22c55e;
+color:white;
+}
+
+.notice{
+margin-top:10px;
+font-size:13px;
+color:#94a3b8;
+}
+
+.section{
+padding:50px 0;
+}
+
+.cta-box{
+background:white;
+padding:30px;
+border-radius:12px;
+text-align:center;
+border:1px solid #e2e8f0;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+border:1px solid #e2e8f0;
+text-align:center;
+}
+
+.card p{
+color:#64748b;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+padding:30px;
+background:#0f172a;
+color:white;
+text-align:center;
+}
+
+footer small{
+color:#cbd5e1;
+}
+
+@media(max-width:900px){
+.cards{
+grid-template-columns:1fr;
+}
+}
 </style>
 
 <script>
-const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf-sIskCW_DZMZBLzGoyc_h1kCkXI0CjDvaNGoF6THkia8Oyg/viewform?usp=header";
-const WHATSAPP_URL = "https://wa.me/17186756729?text=" + encodeURIComponent("Hi, I’m not sure which service I need (divorce, prenup, or immigration). Can you help me choose?");
-
-function openForm() {
-  window.location.href = FORM_URL;
-}
-
-function openWhatsApp() {
-  window.open(WHATSAPP_URL, "_blank");
+function openWhatsApp(){
+window.open("https://wa.me/17186756729?text=Hi, I’m not sure which service I need (divorce, prenup, or immigration). Can you help me choose?");
 }
 </script>
 
 </head>
+
 <body>
 
 <header>
-  <div class="container">
-    <a href="https://easylegalfiling.com/" class="brand">
-      <img src="LOGO.png" alt="EasyLegalFiling logo">
-      <div>
-        <div class="brand-name">EasyLegalFiling</div>
-        <div class="brand-tag">Attorney-Designed Filing Systems</div>
-      </div>
-    </a>
-  </div>
+<div class="container">
+<a href="#" class="brand">
+<img src="LOGO.png">
+<div>
+<div class="brand-name">EasyLegalFiling</div>
+<div class="brand-tag">Attorney-Designed Filing Systems</div>
+</div>
+</a>
+</div>
 </header>
 
 <section class="hero">
-  <div class="container">
-    <h1>See Your Legal Documents Before You Pay</h1>
-    <p>Choose the right legal service first so you do not waste time, money, or make costly mistakes.</p>
+<div class="container">
 
-    <div class="button-row">
-      <a class="btn btn-primary" href="#services">Choose My Service</a>
-      <button class="btn btn-secondary" type="button" onclick="openForm()">Get My Starting Link</button>
-      <button class="btn btn-green" type="button" onclick="openWhatsApp()">Ask on WhatsApp</button>
-    </div>
+<h1>See Your Legal Documents Before You Pay</h1>
 
-    <div class="notice">Most people lose time by starting the wrong process first.</div>
-  </div>
+<p>
+Choose the right legal service first so you don’t waste time, money, or make costly mistakes.
+</p>
+
+<div class="button-row">
+<a class="btn btn-primary" href="#services">Choose My Service</a>
+
+<a class="btn btn-secondary" href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">
+Get My Starting Link
+</a>
+
+<a class="btn btn-green" href="#" onclick="openWhatsApp(); return false;">
+Ask on WhatsApp
+</a>
+</div>
+
+<div class="notice">
+Most people lose time by starting the wrong process first
+</div>
+
+</div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="cta-box">
-      <h2>Not sure where to start?</h2>
-      <p style="color:#64748b;max-width:700px;margin:0 auto 20px;">Get the exact starting point for your situation in under 60 seconds.</p>
-      <div class="button-row">
-        <button class="btn btn-primary" type="button" onclick="openForm()">Get My Starting Link (Free)</button>
-        <button class="btn btn-green" type="button" onclick="openWhatsApp()">Ask Me on WhatsApp</button>
-      </div>
-    </div>
-  </div>
+<div class="container">
+
+<div class="cta-box">
+
+<h2>Not sure where to start?</h2>
+
+<p style="color:#64748b;">
+Get the exact starting point for your situation in under 60 seconds.
+</p>
+
+<br>
+
+<a class="btn btn-primary" href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">
+Get My Starting Link (Free)
+</a>
+
+<a class="btn btn-green" href="#" onclick="openWhatsApp(); return false;">
+Ask Me on WhatsApp
+</a>
+
+</div>
+
+</div>
 </section>
 
 <section id="services" class="section">
-  <div class="container">
-    <h2 style="text-align:center;margin-top:0;">Choose Your Service</h2>
+<div class="container">
 
-    <div class="cards">
-      <div class="card">
-        <h3>Prenup / Postnup</h3>
-        <p>Protect assets and avoid future problems before they start.</p>
-        <a class="btn btn-primary" href="https://avoiddivorceproblems.com" target="_blank" rel="noopener">Check My Need</a>
-      </div>
+<h2 style="text-align:center;">Choose Your Service</h2>
 
-      <div class="card">
-        <h3>Uncontested Divorce</h3>
-        <p>Start a faster, simpler uncontested divorce process online.</p>
-        <a class="btn btn-primary" href="https://easydivorcefiling.com" target="_blank" rel="noopener">Start Divorce</a>
-      </div>
+<div class="cards">
 
-      <div class="card">
-        <h3>Immigration Filing</h3>
-        <p>Use a structured immigration filing system designed to reduce mistakes.</p>
-        <a class="btn btn-primary" href="https://easyimmigrationfiling.com" target="_blank" rel="noopener">Start Immigration</a>
-      </div>
-    </div>
-  </div>
+<div class="card">
+<h3>Prenup / Postnup</h3>
+<p>Protect assets and avoid future problems</p>
+<a class="btn btn-primary" href="https://avoiddivorceproblems.com" target="_blank">
+Check My Need
+</a>
+</div>
+
+<div class="card">
+<h3>Uncontested Divorce</h3>
+<p>Fast, simple divorce process</p>
+<a class="btn btn-primary" href="https://easydivorcefiling.com" target="_blank">
+Start Divorce
+</a>
+</div>
+
+<div class="card">
+<h3>Immigration Filing</h3>
+<p>Structured filing system</p>
+<a class="btn btn-primary" href="https://easyimmigrationfiling.com" target="_blank">
+Start Immigration
+</a>
+</div>
+
+</div>
+
+</div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <h2 style="text-align:center;margin-top:0;">Why This Works</h2>
+<div class="container">
 
-    <div class="cards">
-      <div class="card">
-        <strong>Preview First</strong>
-        <p>See documents before paying.</p>
-      </div>
+<h2 style="text-align:center;">Why This Works</h2>
 
-      <div class="card">
-        <strong>Attorney Logic</strong>
-        <p>Built from real legal workflows.</p>
-      </div>
+<div class="cards">
 
-      <div class="card">
-        <strong>Faster Start</strong>
-        <p>Get to the right process immediately.</p>
-      </div>
-    </div>
-  </div>
+<div class="card">
+<strong>Preview First</strong>
+<p>See documents before paying</p>
+</div>
+
+<div class="card">
+<strong>Attorney Logic</strong>
+<p>Built from real workflows</p>
+</div>
+
+<div class="card">
+<strong>Faster Start</strong>
+<p>Get to the right process immediately</p>
+</div>
+
+</div>
+
+</div>
 </section>
 
 <footer>
-  EasyLegalFiling.com
-  <br><br>
-  <small>
-    No attorney-client relationship is formed by use of this website.
-    This site may be considered attorney advertising.
-  </small>
+
+EasyLegalFiling.com
+
+<br><br>
+
+<small>
+No attorney-client relationship is formed by use of this website.  
+This site may be considered attorney advertising.
+</small>
+
 </footer>
 
-<a class="whatsapp" href="#" onclick="openWhatsApp(); return false;">Chat</a>
+<a class="whatsapp" href="#" onclick="openWhatsApp(); return false;">
+Chat
+</a>
 
 </body>
 </html>
