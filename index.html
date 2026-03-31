@@ -11,19 +11,10 @@
 <link rel="icon" type="image/png" href="FAVICON.png">
 
 <style>
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#f8fafc;
-color:#0f172a;
-line-height:1.5;
-}
+body{margin:0;font-family:Arial;background:#f8fafc;color:#0f172a}
+.container{width:min(1100px,92%);margin:auto}
 
-.container{
-width:min(1100px,92%);
-margin:auto;
-}
-
+/* HEADER */
 header{
 background:#fff;
 border-bottom:1px solid #e2e8f0;
@@ -31,6 +22,12 @@ padding:15px 0;
 position:sticky;
 top:0;
 z-index:1000;
+}
+
+.header-flex{
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .brand{
@@ -41,24 +38,30 @@ text-decoration:none;
 color:#0f172a;
 }
 
-.brand img{
-height:65px;
+.brand img{height:70px}
+
+.brand-name{font-weight:800;font-size:24px}
+.brand-tag{font-size:13px;color:#64748b}
+
+/* SMALL TOP RIGHT CTA */
+.header-cta{
+display:flex;
+gap:15px;
+align-items:center;
 }
 
-.brand-name{
-font-weight:800;
-font-size:24px;
+.header-cta a{
+font-size:14px;
+font-weight:700;
+color:#2563eb;
+text-decoration:none;
 }
 
-.brand-tag{
-font-size:13px;
-color:#64748b;
-}
-
+/* HERO */
 .hero{
 text-align:center;
 padding:70px 0;
-background:#ffffff;
+background:#fff;
 }
 
 .hero h1{
@@ -79,33 +82,44 @@ font-size:1.1rem;
 display:block;
 background:#2563eb;
 color:white;
-padding:18px;
+padding:20px;
 border-radius:14px;
 font-weight:800;
 text-decoration:none;
-max-width:400px;
+max-width:420px;
 margin:0 auto 20px;
-font-size:18px;
+font-size:19px;
+box-shadow:0 8px 20px rgba(37,99,235,0.25);
 }
 
-/* SECONDARY ACTIONS */
+/* SECONDARY (SMALL + SIDE STYLE) */
 .secondary-row{
 display:flex;
 justify-content:center;
-gap:15px;
+gap:18px;
 flex-wrap:wrap;
 }
 
 .secondary-row a{
-font-size:14px;
+font-size:13px;
 text-decoration:none;
 color:#2563eb;
 font-weight:700;
+opacity:0.85;
 }
 
-.section{
-padding:55px 0;
+.secondary-row a:hover{
+opacity:1;
 }
+
+.notice{
+margin-top:12px;
+font-size:13px;
+color:#94a3b8;
+}
+
+/* SECTIONS */
+.section{padding:55px 0}
 
 .cta-box{
 background:white;
@@ -115,6 +129,7 @@ text-align:center;
 border:1px solid #e2e8f0;
 }
 
+/* SERVICES */
 .cards{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -129,10 +144,9 @@ border:1px solid #e2e8f0;
 text-align:center;
 }
 
-.card p{
-color:#64748b;
-}
+.card p{color:#64748b}
 
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -145,6 +159,7 @@ text-decoration:none;
 font-weight:bold;
 }
 
+/* FOOTER */
 footer{
 padding:30px;
 background:#0f172a;
@@ -152,14 +167,12 @@ color:white;
 text-align:center;
 }
 
-footer small{
-color:#cbd5e1;
-}
+footer small{color:#cbd5e1}
 
+/* MOBILE */
 @media(max-width:900px){
-.cards{
-grid-template-columns:1fr;
-}
+.cards{grid-template-columns:1fr}
+.header-flex{flex-direction:column;gap:10px}
 }
 </style>
 
@@ -174,7 +187,8 @@ window.open("https://wa.me/17186756729?text=Hi, I’m not sure which service I n
 <body>
 
 <header>
-<div class="container">
+<div class="container header-flex">
+
 <a href="#" class="brand">
 <img src="LOGO.png">
 <div>
@@ -182,6 +196,12 @@ window.open("https://wa.me/17186756729?text=Hi, I’m not sure which service I n
 <div class="brand-tag">Attorney-Designed Filing Systems</div>
 </div>
 </a>
+
+<div class="header-cta">
+<a href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">Contact</a>
+<a href="#" onclick="openWhatsApp(); return false;">WhatsApp</a>
+</div>
+
 </div>
 </header>
 
@@ -194,25 +214,20 @@ window.open("https://wa.me/17186756729?text=Hi, I’m not sure which service I n
 Choose the right legal service first so you don’t waste time, money, or make costly mistakes.
 </p>
 
-<!-- PRIMARY CTA -->
+<!-- MAIN CTA -->
 <a class="primary-cta" href="#services">
 Choose My Service
 </a>
 
-<!-- SECONDARY -->
+<!-- SMALL SECONDARY -->
 <div class="secondary-row">
-<a href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">
-Get My Starting Link
-</a>
-
-<a href="#" onclick="openWhatsApp(); return false;">
-Ask on WhatsApp
-</a>
+<a href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">Contact</a>
+<a href="#" onclick="openWhatsApp(); return false;">Ask on WhatsApp</a>
 </div>
 
-<p style="margin-top:12px;font-size:13px;color:#94a3b8;">
+<div class="notice">
 Most people lose time by starting the wrong process first
-</p>
+</div>
 
 </div>
 </section>
@@ -225,19 +240,19 @@ Most people lose time by starting the wrong process first
 <h2>Not sure where to start?</h2>
 
 <p style="color:#64748b;">
-Get the exact starting point for your situation in under 60 seconds.
+Get the right starting point in under 60 seconds.
 </p>
 
 <br>
 
 <a class="primary-cta" href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">
-Get My Starting Link (Free)
+Contact for Help
 </a>
 
 <br>
 
-<a style="color:#2563eb;font-weight:700;" href="#" onclick="openWhatsApp(); return false;">
-Ask Me on WhatsApp
+<a style="font-size:13px;color:#2563eb;font-weight:700;" href="#" onclick="openWhatsApp(); return false;">
+Or ask on WhatsApp
 </a>
 
 </div>
@@ -254,7 +269,7 @@ Ask Me on WhatsApp
 
 <div class="card">
 <h3>Prenup / Postnup</h3>
-<p>Protect your assets and avoid future problems before they happen.</p>
+<p>Protect your assets and avoid future legal problems before they happen.</p>
 <a class="primary-cta" href="https://avoiddivorceproblems.com" target="_blank">
 Check My Need
 </a>
