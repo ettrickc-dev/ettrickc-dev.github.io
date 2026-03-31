@@ -36,83 +36,75 @@ z-index:1000;
 .brand{
 display:flex;
 align-items:center;
-gap:12px;
+gap:15px;
 text-decoration:none;
 color:#0f172a;
 }
 
 .brand img{
-height:48px;
+height:65px;
 }
 
 .brand-name{
 font-weight:800;
-font-size:22px;
+font-size:24px;
 }
 
 .brand-tag{
-font-size:12px;
+font-size:13px;
 color:#64748b;
 }
 
 .hero{
 text-align:center;
-padding:60px 0;
-background:linear-gradient(180deg,#fff 0%,#f8fafc 100%);
+padding:70px 0;
+background:#ffffff;
 }
 
 .hero h1{
-font-size:clamp(2rem,4vw,3rem);
+font-size:clamp(2.2rem,4vw,3.2rem);
 margin-bottom:15px;
 }
 
 .hero p{
 color:#64748b;
-max-width:700px;
+max-width:720px;
 margin:auto;
-margin-bottom:25px;
+margin-bottom:30px;
+font-size:1.1rem;
 }
 
-.button-row{
+/* PRIMARY CTA */
+.primary-cta{
+display:block;
+background:#2563eb;
+color:white;
+padding:18px;
+border-radius:14px;
+font-weight:800;
+text-decoration:none;
+max-width:400px;
+margin:0 auto 20px;
+font-size:18px;
+}
+
+/* SECONDARY ACTIONS */
+.secondary-row{
 display:flex;
-gap:12px;
 justify-content:center;
+gap:15px;
 flex-wrap:wrap;
 }
 
-.btn{
-padding:15px 20px;
-border-radius:12px;
-font-weight:700;
+.secondary-row a{
+font-size:14px;
 text-decoration:none;
-display:inline-block;
-cursor:pointer;
-}
-
-.btn-primary{
-background:#2563eb;
-color:white;
-}
-
-.btn-secondary{
-background:white;
-border:1px solid #e2e8f0;
-color:#0f172a;
-}
-
-.btn-green{
-background:#22c55e;
-color:white;
-}
-
-.notice{
-margin-top:10px;
-font-size:13px;
-color:#94a3b8;
+color:#2563eb;
+font-weight:700;
 }
 
 .section{
-padding:50px 0;
+padding:55px 0;
 }
 
 .cta-box{
@@ -202,21 +194,25 @@ window.open("https://wa.me/17186756729?text=Hi, I’m not sure which service I n
 Choose the right legal service first so you don’t waste time, money, or make costly mistakes.
 </p>
 
-<div class="button-row">
-<a class="btn btn-primary" href="#services">Choose My Service</a>
+<!-- PRIMARY CTA -->
+<a class="primary-cta" href="#services">
+Choose My Service
+</a>
 
-<a class="btn btn-secondary" href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">
+<!-- SECONDARY -->
+<div class="secondary-row">
+<a href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">
 Get My Starting Link
 </a>
 
-<a class="btn btn-green" href="#" onclick="openWhatsApp(); return false;">
+<a href="#" onclick="openWhatsApp(); return false;">
 Ask on WhatsApp
 </a>
 </div>
 
-<div class="notice">
+<p style="margin-top:12px;font-size:13px;color:#94a3b8;">
 Most people lose time by starting the wrong process first
-</div>
+</p>
 
 </div>
 </section>
@@ -234,11 +230,13 @@ Get the exact starting point for your situation in under 60 seconds.
 
 <br>
 
-<a class="btn btn-primary" href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">
+<a class="primary-cta" href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">
 Get My Starting Link (Free)
 </a>
 
-<a class="btn btn-green" href="#" onclick="openWhatsApp(); return false;">
+<br>
+
+<a style="color:#2563eb;font-weight:700;" href="#" onclick="openWhatsApp(); return false;">
 Ask Me on WhatsApp
 </a>
 
@@ -256,24 +254,24 @@ Ask Me on WhatsApp
 
 <div class="card">
 <h3>Prenup / Postnup</h3>
-<p>Protect assets and avoid future problems</p>
-<a class="btn btn-primary" href="https://avoiddivorceproblems.com" target="_blank">
+<p>Protect your assets and avoid future problems before they happen.</p>
+<a class="primary-cta" href="https://avoiddivorceproblems.com" target="_blank">
 Check My Need
 </a>
 </div>
 
 <div class="card">
 <h3>Uncontested Divorce</h3>
-<p>Fast, simple divorce process</p>
-<a class="btn btn-primary" href="https://easydivorcefiling.com" target="_blank">
+<p>Start your divorce process quickly and correctly.</p>
+<a class="primary-cta" href="https://easydivorcefiling.com" target="_blank">
 Start Divorce
 </a>
 </div>
 
 <div class="card">
 <h3>Immigration Filing</h3>
-<p>Structured filing system</p>
-<a class="btn btn-primary" href="https://easyimmigrationfiling.com" target="_blank">
+<p>Follow a structured system designed to reduce mistakes and delays.</p>
+<a class="primary-cta" href="https://easyimmigrationfiling.com" target="_blank">
 Start Immigration
 </a>
 </div>
