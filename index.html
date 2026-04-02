@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EasyLegalFiling | See Your Legal Documents Before You Pay</title>
+<title>EasyLegalFiling | Avoid Costly Legal Mistakes</title>
 
-<meta name="description" content="Create divorce, prenup, postnup, and immigration documents online. See your legal documents before you pay.">
+<meta name="description" content="Preview your divorce, prenup, or immigration documents before you pay. Avoid costly mistakes.">
 
 <link rel="icon" type="image/png" href="FAVICON.png">
 
@@ -43,20 +43,6 @@ color:#0f172a;
 .brand-name{font-weight:800;font-size:24px}
 .brand-tag{font-size:13px;color:#64748b}
 
-/* SMALL TOP RIGHT CTA */
-.header-cta{
-display:flex;
-gap:15px;
-align-items:center;
-}
-
-.header-cta a{
-font-size:14px;
-font-weight:700;
-color:#2563eb;
-text-decoration:none;
-}
-
 /* HERO */
 .hero{
 text-align:center;
@@ -73,31 +59,31 @@ margin-bottom:15px;
 color:#64748b;
 max-width:720px;
 margin:auto;
-margin-bottom:30px;
+margin-bottom:20px;
 font-size:1.1rem;
 }
 
-/* PRIMARY CTA */
+/* CTA */
 .primary-cta{
 display:block;
 background:#2563eb;
 color:white;
-padding:20px;
+padding:18px;
 border-radius:14px;
 font-weight:800;
 text-decoration:none;
 max-width:420px;
-margin:0 auto 20px;
-font-size:19px;
+margin:10px auto;
+font-size:18px;
 box-shadow:0 8px 20px rgba(37,99,235,0.25);
 }
 
-/* SECONDARY (SMALL + SIDE STYLE) */
 .secondary-row{
 display:flex;
 justify-content:center;
-gap:18px;
+gap:15px;
 flex-wrap:wrap;
+margin-top:10px;
 }
 
 .secondary-row a{
@@ -105,31 +91,17 @@ font-size:13px;
 text-decoration:none;
 color:#2563eb;
 font-weight:700;
-opacity:0.85;
 }
 
-.secondary-row a:hover{
-opacity:1;
+/* INPUT */
+input{
+padding:15px;
+width:280px;
+border-radius:10px;
+border:1px solid #ccc;
 }
 
-.notice{
-margin-top:12px;
-font-size:13px;
-color:#94a3b8;
-}
-
-/* SECTIONS */
-.section{padding:55px 0}
-
-.cta-box{
-background:white;
-padding:30px;
-border-radius:12px;
-text-align:center;
-border:1px solid #e2e8f0;
-}
-
-/* SERVICES */
+/* CARDS */
 .cards{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -146,6 +118,9 @@ text-align:center;
 
 .card p{color:#64748b}
 
+/* SECTIONS */
+.section{padding:55px 0}
+
 /* WHATSAPP */
 .whatsapp{
 position:fixed;
@@ -159,26 +134,15 @@ text-decoration:none;
 font-weight:bold;
 }
 
-/* FOOTER */
-footer{
-padding:30px;
-background:#0f172a;
-color:white;
-text-align:center;
-}
-
-footer small{color:#cbd5e1}
-
 /* MOBILE */
 @media(max-width:900px){
 .cards{grid-template-columns:1fr}
-.header-flex{flex-direction:column;gap:10px}
 }
 </style>
 
 <script>
 function openWhatsApp(){
-window.open("https://wa.me/17186756729?text=Hi, I’m not sure which service I need (divorce, prenup, or immigration). Can you help me choose?");
+window.open("https://wa.me/17186756729?text=Hi, I need help choosing the right legal service.");
 }
 </script>
 
@@ -197,143 +161,152 @@ window.open("https://wa.me/17186756729?text=Hi, I’m not sure which service I n
 </div>
 </a>
 
-<div class="header-cta">
-<a href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">Contact</a>
-<a href="#" onclick="openWhatsApp(); return false;">WhatsApp</a>
-</div>
-
 </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 <div class="container">
 
-<h1>See Your Legal Documents Before You Pay</h1>
+<h1>Avoid Costly Legal Mistakes Before You Start</h1>
 
 <p>
-Choose the right legal service first so you don’t waste time, money, or make costly mistakes.
+Most people choose the wrong legal process first — and lose time, money, or their case.
 </p>
 
-<!-- MAIN CTA -->
+<a class="primary-cta" href="#services">
+Find My Correct Service
+</a>
+
+<p style="font-size:13px;color:#94a3b8;">
+Takes 30 seconds • No payment required
+</p>
+
+<!-- LEAD CAPTURE (SAFE VERSION) -->
+<div style="margin-top:20px;">
+<input type="email" placeholder="Enter email (optional)">
+<a class="primary-cta" href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">
+Send Me My Legal Plan
+</a>
+<p style="font-size:12px;color:#94a3b8;">
+We’ll show you the correct process before you spend money
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- FEAR -->
+<section class="section">
+<div class="container" style="text-align:center;">
+
+<h2>What Happens If You Start Wrong?</h2>
+
+<p style="color:#64748b;max-width:600px;margin:auto;">
+• Filing the wrong forms can delay your case for months or years  
+<br>• Courts may reject your documents  
+<br>• You could lose money or legal rights permanently  
+</p>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+<div class="container">
+
+<h2 style="text-align:center;">Start the Right Process</h2>
+
+<div class="cards">
+
+<!-- PRENUP -->
+<div class="card">
+<h3>Prenup / Postnup</h3>
+<p>Protect assets before problems start.</p>
+
+<p style="color:#dc2626;font-size:13px;">
+⚠️ Most people choose the wrong process first
+</p>
+
+<a class="primary-cta" href="https://easydivorcefiling.gavel.io/start/playground2/FREE%20PRENUP_POSTNUP%20RISK%20TOOL" target="_blank">
+Check My Risk (Free)
+</a>
+
+<div class="secondary-row">
+<a href="https://easydivorcefiling.gavel.io/start/playground2/PREVIEWPRENUP" target="_blank">Preview Prenup</a>
+<a href="https://easydivorcefiling.gavel.io/start/playground2/PREVIEWPOSTNUP" target="_blank">Preview Postnup</a>
+</div>
+
+<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/8773904c-ee28-4c41-a312-1cb0c4f32649" target="_blank">
+Start Prenup
+</a>
+
+<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/51fa2017-d6f8-477e-a3e2-5dec87d91d2c" target="_blank">
+Start Postnup
+</a>
+
+</div>
+
+<!-- DIVORCE -->
+<div class="card">
+<h3>Uncontested Divorce</h3>
+<p>Fast, structured divorce filing.</p>
+
+<p style="color:#dc2626;font-size:13px;">
+⚠️ Filing wrong = delays or rejection
+</p>
+
+<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/09d2fcf5-ef45-4938-b90c-cb9cc197beaa" target="_blank">
+Start Divorce (No Kids)
+</a>
+
+<div class="secondary-row">
+<a href="https://easydivorcefiling.gavel.io/portal/bundles/ea88bd85-278e-47bd-a6b5-4b9ca0890a32" target="_blank">
+Hire Attorney Divorce
+</a>
+</div>
+
+</div>
+
+<!-- IMMIGRATION -->
+<div class="card">
+<h3>Immigration</h3>
+<p>Reduce delays and avoid mistakes.</p>
+
+<p style="color:#dc2626;font-size:13px;">
+⚠️ Small mistakes can delay your case for months
+</p>
+
+<a class="primary-cta" href="https://easyimmigrationfiling.com" target="_blank">
+Start Immigration
+</a>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section">
+<div class="container" style="text-align:center;">
+
+<h2>Start Now Before You Make a Costly Mistake</h2>
+
 <a class="primary-cta" href="#services">
 Choose My Service
 </a>
 
-<!-- SMALL SECONDARY -->
-<div class="secondary-row">
-<a href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">Contact</a>
-<a href="#" onclick="openWhatsApp(); return false;">Ask on WhatsApp</a>
-</div>
-
-<div class="notice">
-Most people lose time by starting the wrong process first
-</div>
-
 </div>
 </section>
 
-<section class="section">
-<div class="container">
-
-<div class="cta-box">
-
-<h2>Not sure where to start?</h2>
-
-<p style="color:#64748b;">
-Get the right starting point in under 60 seconds.
-</p>
-
-<br>
-
-<a class="primary-cta" href="https://forms.gle/Ab5uctgsAK634eb9A" target="_blank">
-Contact for Help
-</a>
-
-<br>
-
-<a style="font-size:13px;color:#2563eb;font-weight:700;" href="#" onclick="openWhatsApp(); return false;">
-Or ask on WhatsApp
-</a>
-
-</div>
-
-</div>
-</section>
-
-<section id="services" class="section">
-<div class="container">
-
-<h2 style="text-align:center;">Choose Your Service</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Prenup / Postnup</h3>
-<p>Protect your assets and avoid future legal problems before they happen.</p>
-<a class="primary-cta" href="https://avoiddivorceproblems.com" target="_blank">
-Check My Need
-</a>
-</div>
-
-<div class="card">
-<h3>Uncontested Divorce</h3>
-<p>Start your divorce process quickly and correctly.</p>
-<a class="primary-cta" href="https://easydivorcefiling.com" target="_blank">
-Start Divorce
-</a>
-</div>
-
-<div class="card">
-<h3>Immigration Filing</h3>
-<p>Follow a structured system designed to reduce mistakes and delays.</p>
-<a class="primary-cta" href="https://easyimmigrationfiling.com" target="_blank">
-Start Immigration
-</a>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-
-<h2 style="text-align:center;">Why This Works</h2>
-
-<div class="cards">
-
-<div class="card">
-<strong>Preview First</strong>
-<p>See documents before paying</p>
-</div>
-
-<div class="card">
-<strong>Attorney Logic</strong>
-<p>Built from real workflows</p>
-</div>
-
-<div class="card">
-<strong>Faster Start</strong>
-<p>Get to the right process immediately</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<footer>
-
+<footer style="padding:30px;background:#0f172a;color:white;text-align:center;">
 EasyLegalFiling.com
-
 <br><br>
-
 <small>
-No attorney-client relationship is formed by use of this website.  
-This site may be considered attorney advertising.
+No attorney-client relationship is formed by use of this website.
 </small>
-
 </footer>
 
 <a class="whatsapp" href="#" onclick="openWhatsApp(); return false;">
