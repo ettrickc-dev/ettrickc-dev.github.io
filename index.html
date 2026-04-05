@@ -13,67 +13,72 @@
 <style>
 body{margin:0;font-family:Arial;background:#f8fafc;color:#0f172a}
 .container{width:min(1100px,92%);margin:auto}
-
 header{background:#fff;border-bottom:1px solid #e2e8f0;padding:15px 0;position:sticky;top:0;z-index:1000;}
 .header-flex{display:flex;justify-content:space-between;align-items:center;}
-
 .brand{display:flex;align-items:center;gap:15px;text-decoration:none;color:#0f172a;}
 .brand img{height:70px}
 .brand-name{font-weight:800;font-size:24px}
 .brand-tag{font-size:13px;color:#64748b}
-
 .hero{text-align:center;padding:70px 0;background:#fff;}
 .hero h1{font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:15px;}
 .hero p{color:#64748b;max-width:720px;margin:auto;margin-bottom:20px;font-size:1.1rem;}
-
 .primary-cta{
 display:block;background:#2563eb;color:white;padding:18px;border-radius:14px;
 font-weight:800;text-decoration:none;max-width:420px;margin:10px auto;font-size:18px;
 box-shadow:0 8px 20px rgba(37,99,235,0.25);
 }
-
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .card{background:white;padding:25px;border-radius:12px;border:1px solid #e2e8f0;text-align:center;}
 .card p{color:#64748b}
-
 .section{padding:55px 0}
-
 .whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 18px;border-radius:50px;text-decoration:none;font-weight:bold;}
-
 @media(max-width:900px){.cards{grid-template-columns:1fr}}
 
-/* EXIT POPUP */
 .popup{
 display:none;position:fixed;top:0;left:0;width:100%;height:100%;
 background:rgba(0,0,0,0.6);z-index:99999;justify-content:center;align-items:center;
 }
 .popup-box{
-background:white;padding:30px;border-radius:12px;max-width:400px;text-align:center;
+background:white;padding:30px;border-radius:12px;max-width:400px;text-align:center;position:relative;
 }
-
-/* SOCIAL PROOF POPUP */
+.close-btn{
+position:absolute;top:10px;right:15px;cursor:pointer;font-size:20px;font-weight:bold;
+}
 .social-proof{
 position:fixed;bottom:90px;left:20px;background:#0f172a;color:white;
 padding:12px 15px;border-radius:10px;font-size:13px;display:none;
 }
 </style>
 
-<!-- TikTok Pixel Code -->
+<!-- TikTok Pixel -->
 <script>
 !function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
-  ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],
-  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}; 
-  for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
-  ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},
-  ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
-  ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date;
-  ttq._o=ttq._o||{},ttq._o[e]=n||{};
-  n=document.createElement("script");n.type="text/javascript";n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;
-  e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-  ttq.load('D3M0V0RC77UELR3MUGNG');
-  ttq.page();
+w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}; 
+for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},
+ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
+ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date;
+ttq._o=ttq._o||{},ttq._o[e]=n||{};
+n=document.createElement("script");n.type="text/javascript";n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;
+e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+ttq.load('D3M0V0RC77UELR3MUGNG');
+ttq.page();
 }(window, document, 'ttq');
+
+/* TRACKING FUNCTIONS */
+function trackClick(label){
+ttq.track('ClickButton',{content_name: label});
+}
+
+function trackCheckout(label){
+ttq.track('InitiateCheckout',{content_name: label});
+}
+
+function trackLead(label){
+ttq.track('CompleteRegistration',{content_name: label});
+}
 </script>
 
 <script>
@@ -81,13 +86,29 @@ function openWhatsApp(){
 window.open("https://wa.me/17186756729?text=Hi, I need help choosing the right legal service.");
 }
 
-/* EXIT INTENT */
-let shown=false;
-document.addEventListener("mouseout",function(e){
-if(e.clientY<10 && !shown){
+/* POPUP LOGIC */
+let popupShown = sessionStorage.getItem("popupShown");
+
+function showPopup(){
+if(!popupShown){
 document.getElementById("exitPopup").style.display="flex";
-shown=true;
+sessionStorage.setItem("popupShown", "true");
 }
+}
+function closePopup(){
+document.getElementById("exitPopup").style.display="none";
+}
+setTimeout(showPopup, 12000);
+window.addEventListener("scroll", function(){
+let scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+if(scrollPercent > 40){ showPopup(); }
+});
+document.addEventListener("mouseout",function(e){
+if(e.clientY<10){ showPopup(); }
+});
+window.addEventListener("click", function(e){
+let popup = document.getElementById("exitPopup");
+if(e.target === popup){ closePopup(); }
 });
 
 /* SOCIAL PROOF */
@@ -97,14 +118,12 @@ const messages=[
 "Someone checked their prenup risk",
 "User just requested to appear online in court"
 ];
-
 function showProof(){
 let box=document.getElementById("proof");
 box.innerText=messages[Math.floor(Math.random()*messages.length)];
 box.style.display="block";
 setTimeout(()=>{box.style.display="none";},4000);
 }
-
 setInterval(showProof,7000);
 </script>
 
@@ -112,12 +131,9 @@ setInterval(showProof,7000);
 
 <body>
 
-<!-- STICKY BAR -->
 <div style="position:fixed;top:0;width:100%;background:#0f172a;color:white;text-align:center;padding:10px;z-index:9999;font-weight:700;font-size:14px;">
 ⚠️ Don’t file the wrong legal documents — fix your case or start correctly in minutes
-<a href="#services" style="color:#22c55e;margin-left:10px;text-decoration:underline;">
-Start Now →
-</a>
+<a href="#services" style="color:#22c55e;margin-left:10px;text-decoration:underline;">Start Now →</a>
 </div>
 <div style="height:40px;"></div>
 
@@ -133,21 +149,14 @@ Start Now →
 </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
 <div class="container">
 <h1>Avoid Costly Legal Mistakes Before You Start</h1>
-
 <p>Most people choose the wrong legal process first — and lose time, money, or their case.</p>
-
-<a class="primary-cta" href="#services">
-Find My Correct Service (30 Seconds)
-</a>
-
+<a class="primary-cta" href="#services" onclick="trackClick('Find Service')">Find My Correct Service (30 Seconds)</a>
 </div>
 </section>
 
-<!-- SOCIAL PROOF SECTION -->
 <section class="section">
 <div class="container" style="text-align:center;">
 <h2>Used by People Who Want to Do It Right the First Time</h2>
@@ -155,84 +164,43 @@ Find My Correct Service (30 Seconds)
 </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services" class="section">
 <div class="container">
-
 <h2 style="text-align:center;">Start the Right Process</h2>
 
 <div class="cards">
 
-<!-- IMMIGRATION -->
 <div class="card">
 <h3>⚖️ Fix Your Missed Immigration Court Case</h3>
-
-<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/1fdc878f-a324-489a-bc6a-272f3e973196" target="_blank">
-Fix My Case Now
-</a>
-
+<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/1fdc878f-a324-489a-bc6a-272f3e973196" target="_blank" onclick="trackCheckout('Immigration Fix')">Fix My Case Now</a>
 <p style="color:#dc2626;font-size:13px;">⚠️ Time matters — waiting can make your situation worse</p>
-
-<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/966b144d-cda2-4eed-87d1-054f67b4151e" target="_blank">
-Avoid Court: Request to Appear Online
-</a>
-
-<a class="primary-cta" href="http://easylegalfiling.com/immigration-tool/" target="_blank">
-Find Out How to Stay in the U.S. (Free Tool)
-</a>
-
+<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/966b144d-cda2-4eed-87d1-054f67b4151e" target="_blank" onclick="trackCheckout('Appear Online')">Avoid Court: Request to Appear Online</a>
+<a class="primary-cta" href="http://easylegalfiling.com/immigration-tool/" target="_blank" onclick="trackLead('Immigration Tool')">Find Out How to Stay in the U.S. (Free Tool)</a>
 </div>
 
-<!-- DIVORCE -->
 <div class="card">
 <h3>Done-For-You Divorce (Attorney Handled)</h3>
-
-<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/ea88bd85-278e-47bd-a6b5-4b9ca0890a32" target="_blank">
-Start Now
-</a>
-
+<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/ea88bd85-278e-47bd-a6b5-4b9ca0890a32" target="_blank" onclick="trackCheckout('Divorce Service')">Start Now</a>
 <h3 style="margin-top:25px;">Complete Your Divorce Without a Lawyer ($ Save)</h3>
-
-<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/09d2fcf5-ef45-4938-b90c-cb9cc197beaa" target="_blank">
-Get My Documents
-</a>
-
+<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/09d2fcf5-ef45-4938-b90c-cb9cc197beaa" target="_blank" onclick="trackCheckout('DIY Divorce')">Get My Documents</a>
 </div>
 
-<!-- PRENUP -->
 <div class="card">
 <h3>Protect Your Assets Before Marriage (Prenup)</h3>
-
-<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/8773904c-ee28-4c41-a312-1cb0c4f32649" target="_blank">
-Start Now
-</a>
-
+<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/8773904c-ee28-4c41-a312-1cb0c4f32649" target="_blank" onclick="trackCheckout('Prenup')">Start Now</a>
 <h3 style="margin-top:25px;">Protect Your Assets After Marriage (Postnup)</h3>
-
-<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/51fa2017-d6f8-477e-a3e2-5dec87d91d2c" target="_blank">
-Start Now
-</a>
-
-<a class="primary-cta" href="https://easydivorcefiling.gavel.io/start/playground2/FREE%20PRENUP_POSTNUP%20RISK%20TOOL" target="_blank">
-Free Prenup/Postnup Risk Check (30 Seconds)
-</a>
-
+<a class="primary-cta" href="https://easydivorcefiling.gavel.io/portal/bundles/51fa2017-d6f8-477e-a3e2-5dec87d91d2c" target="_blank" onclick="trackCheckout('Postnup')">Start Now</a>
+<a class="primary-cta" href="https://easydivorcefiling.gavel.io/start/playground2/FREE%20PRENUP_POSTNUP%20RISK%20TOOL" target="_blank" onclick="trackLead('Prenup Tool')">Free Prenup/Postnup Risk Check (30 Seconds)</a>
 </div>
 
 </div>
 </div>
 </section>
 
-<!-- FINAL CTA -->
 <section class="section" style="background:#fff;">
 <div class="container" style="text-align:center;">
-
 <h2>You’re One Step Away From Doing This Right</h2>
-
-<a class="primary-cta" href="#services">
-Finish My Process Now
-</a>
-
+<a class="primary-cta" href="#services" onclick="trackClick('Final CTA')">Finish My Process Now</a>
 </div>
 </section>
 
@@ -240,24 +208,17 @@ Finish My Process Now
 EasyLegalFiling.com
 </footer>
 
-<a class="whatsapp" href="#" onclick="openWhatsApp(); return false;">
-Chat
-</a>
+<a class="whatsapp" href="#" onclick="openWhatsApp(); return false;">Chat</a>
 
-<!-- EXIT POPUP -->
 <div id="exitPopup" class="popup">
 <div class="popup-box">
+<span class="close-btn" onclick="closePopup()">✕</span>
 <h3>Wait — Don’t Risk Doing This Wrong</h3>
-<p>Most people make mistakes the first time.  
-Start the correct process now.</p>
-
-<a class="primary-cta" href="#services">
-Show Me My Correct Service
-</a>
+<p>Most people make mistakes the first time. Start the correct process now.</p>
+<a class="primary-cta" href="#services" onclick="closePopup(); trackClick('Popup CTA')">Show Me My Correct Service</a>
 </div>
 </div>
 
-<!-- SOCIAL PROOF FLOAT -->
 <div id="proof" class="social-proof"></div>
 
 </body>
