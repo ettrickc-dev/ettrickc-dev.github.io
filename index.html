@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R9TX80PX9B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R9TX80PX9B');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EasyLegalFiling | Legal Documents — Done Right, Done Fast</title>
-<meta name="description" content="Attorney-designed legal documents for divorce, estate, immigration, and prenups. Trusted by thousands across New York. Start in minutes.">
+<title>EasyLegalFiling | NY Divorce $149 — $350 Less Than LegalZoom</title>
+<meta name="description" content="Attorney-designed legal documents for divorce, prenups, estate and more. NY-specific. $350 less than LegalZoom. Start in minutes.">
 <meta property="og:title" content="EasyLegalFiling — Legal Documents Done Right">
 <meta property="og:description" content="Attorney-designed filing systems for divorce, immigration, prenups & estate. Start in 30 seconds.">
 <link rel="icon" type="image/png" href="FAVICON.png">
@@ -971,7 +979,7 @@ footer a { color: #a78bfa; }
           <a class="btn-hero-secondary" href="https://wa.me/17186756729?text=Hi, I need help choosing the right legal service." target="_blank" onclick="trackClick('WhatsApp Hero')">
             💬 Chat With Us on WhatsApp
           </a>
-          <p class="hero-micro">
+          <p class="hero-micro" id="hero-micro">
             <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
             No commitment · No credit card required for free tools
           </p>
@@ -997,12 +1005,12 @@ footer a { color: #a78bfa; }
             <div class="hv-badge">Ready</div>
           </div>
           <div class="hv-card">
-            <div class="hv-icon amber">⚖️</div>
+            <div class="hv-icon amber">💍</div>
             <div>
-              <div class="hv-title">Immigration Court</div>
-              <div class="hv-sub">Missed date? Fix it now</div>
+              <div class="hv-title">Prenup &amp; Postnup</div>
+              <div class="hv-sub">Protect your assets</div>
             </div>
-            <div class="hv-badge urgent">Urgent</div>
+            <div class="hv-badge">Ready</div>
           </div>
         </div>
       </div>
@@ -1028,6 +1036,20 @@ footer a { color: #a78bfa; }
   </div>
 </div>
  
+ 
+<!-- ── LEGALZOOM COMPARISON BAR ── -->
+<div style="background:linear-gradient(135deg,#1F3864 0%,#4b2aad 100%);padding:18px 0;text-align:center">
+  <div class="container">
+    <p style="color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap">
+      <span>LegalZoom charges <strong style="color:#fde68a">$499</strong> for NY divorce</span>
+      <span style="color:rgba(255,255,255,.4)">|</span>
+      <span>We charge <strong style="color:#86efac">$149</strong> — NY-specific documents</span>
+      <span style="color:rgba(255,255,255,.4)">|</span>
+      <a href="/legalguide/legalzoom-vs-easylegalfiling.html" style="color:#c4b5fd;text-decoration:underline;font-weight:700">See the full comparison →</a>
+    </p>
+  </div>
+</div>
+ 
 <!-- ── SERVICES ── -->
 <section class="services-section" id="services">
   <div class="container">
@@ -1037,7 +1059,8 @@ footer a { color: #a78bfa; }
  
     <div class="services-grid">
  
-      <!-- IMMIGRATION -->
+      <!-- IMMIGRATION — temporarily hidden while being fixed -->
+      <div style="display:none">
       <div class="svc-card hot reveal">
         <div class="svc-card-header">
           <div class="svc-icon-wrap bg-rose">⚖️</div>
@@ -1060,6 +1083,7 @@ footer a { color: #a78bfa; }
           </a>
         </div>
       </div>
+      </div><!-- end hidden immigration -->
  
       <!-- DIVORCE -->
       <div class="svc-card reveal reveal-delay-1">
@@ -1119,6 +1143,54 @@ footer a { color: #a78bfa; }
           </a>
           <a class="btn-svc-primary" href="https://easydivorcefiling.gavel.io/portal/bundles/f43856a4-c2b5-47ef-bd49-b265fa666d92" target="_blank" onclick="trackCheckout('Estate Case')">
             Start My Estate Case <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+ 
+      <!-- WILL — Coming Soon -->
+      <div class="svc-card reveal" style="opacity:.7">
+        <div class="svc-card-header">
+          <div class="svc-icon-wrap bg-purple">📜</div>
+          <div>
+            <div class="svc-title">Last Will &amp; Testament</div>
+            <div class="svc-desc">Create a valid NY Will in minutes. Free to start — see your completed Will before you pay anything.</div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <a class="btn-svc-primary" href="/legalguide/will-new-york.html" onclick="trackCheckout('Will')">
+            See Your Completed NY Will — Free <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+ 
+      <!-- POA — Coming Soon -->
+      <div class="svc-card reveal reveal-delay-1" style="opacity:.7">
+        <div class="svc-card-header">
+          <div class="svc-icon-wrap bg-teal">📋</div>
+          <div>
+            <div class="svc-title">Power of Attorney</div>
+            <div class="svc-desc">Give someone legal authority to act for you. Free to start — see your completed NY POA before you pay.</div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <a class="btn-svc-primary" href="/legalguide/power-of-attorney-new-york.html" onclick="trackCheckout('POA')">
+            See Your Completed NY POA — Free <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+ 
+      <!-- HEALTH CARE DIRECTIVE — Coming Soon -->
+      <div class="svc-card reveal reveal-delay-2" style="opacity:.7">
+        <div class="svc-card-header">
+          <div class="svc-icon-wrap bg-rose">❤️</div>
+          <div>
+            <div class="svc-title">Health Care Directive</div>
+            <div class="svc-desc">Living Will + Health Care Proxy. Tell doctors your wishes. Valid in all 50 states. Free to start.</div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <a class="btn-svc-primary" href="/legalguide/health-care-directive.html" onclick="trackCheckout('Health Directive')">
+            See My Completed Directive — Free <span class="arrow">→</span>
           </a>
         </div>
       </div>
@@ -1185,12 +1257,12 @@ footer a { color: #a78bfa; }
     <div class="testimonials-grid">
       <div class="testi-card reveal">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"I missed my immigration court date and panicked. EasyLegalFiling walked me through exactly what to do. My case was back on track within the week."</p>
+        <p class="testi-text">"I filed my own divorce and saved over $3,500 compared to what the attorney quoted me. The documents were accepted by the court on the first try."</p>
         <div class="testi-meta">
-          <div class="testi-avatar">MG</div>
+          <div class="testi-avatar">RC</div>
           <div>
-            <div class="testi-name">Maria G.</div>
-            <div class="testi-loc">Queens, New York</div>
+            <div class="testi-name">Rosa C.</div>
+            <div class="testi-loc">Bronx, New York</div>
           </div>
         </div>
       </div>
@@ -1231,7 +1303,7 @@ footer a { color: #a78bfa; }
           Are these documents actually accepted by New York courts?
           <span class="faq-arrow">▾</span>
         </button>
-        <div class="faq-answer">Yes. Every document was designed by licensed New York attorneys using the exact format, language, and statutory references required by New York courts — including the Surrogate's Court, Supreme Court, and Immigration Court. Thousands of filings have been accepted using our system.</div>
+        <div class="faq-answer">Yes. Every document was designed by licensed New York attorneys using the exact format, language, and statutory references required by New York courts — including the Surrogate's Court and Supreme Court. Thousands of filings have been accepted using our system.</div>
       </div>
  
       <div class="faq-item">
@@ -1314,7 +1386,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
  
 /* Social proof toasts */
 const toasts = [
-  "✅ Someone just fixed their missed immigration case",
+  "📄 A client just started their divorce documents — saved $3,000",
   "📄 A client just started their divorce documents",
   "💍 Someone just ran the free prenup risk check",
   "🏛️ A user just checked their NY inheritance rights",
