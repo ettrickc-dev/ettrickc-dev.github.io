@@ -135,7 +135,7 @@ a{color:inherit;text-decoration:none}
 .htrust::before{content:'✓';color:var(--lz-green);font-weight:800}
  
 /* ─── HERO RIGHT: CATEGORY TILES (LegalZoom style) ─── */
-.hero-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.hero-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 @media(max-width:900px){.hero-tiles{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.hero-tiles{display:none}}
 .tile{display:flex;flex-direction:column;justify-content:space-between;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:16px;cursor:pointer;text-decoration:none;transition:all var(--t);position:relative;overflow:hidden}
@@ -313,7 +313,7 @@ footer{background:var(--lz-cream);border-top:1px solid var(--lz-border);padding:
 <!-- TOP BAR -->
 <div class="top-bar">
   ⚖️ Attorney-designed. $350 less than LegalZoom. Every document guaranteed court-ready.
-  <a href="/legalguide/legalzoom-vs-easylegalfiling.html">See the comparison →</a>
+  <a href="https://wa.me/17186756729" target="_blank">💬 Free help on WhatsApp →</a>
 </div>
  
 <!-- HEADER -->
@@ -331,7 +331,7 @@ footer{background:var(--lz-cream);border-top:1px solid var(--lz-border);padding:
         <a class="nav-link" href="#services">Services</a>
         <a class="nav-link" href="/legalguide/divorce.html">Divorce</a>
         <a class="nav-link" href="/legalguide/estate.html">Estate</a>
-        <a class="nav-link" href="/legalguide/immigration-court-relief.html">Immigration</a>
+        <a class="nav-link" href="http://easyimmigrationfiling.com/" target="_blank">Immigration</a>
         <a class="btn-nav-ghost" href="https://wa.me/17186756729" target="_blank">💬 Free Help</a>
         <a class="btn-nav-cta" href="#services" onclick="trackClick('Header CTA')">Get Started →</a>
       </nav>
@@ -349,7 +349,7 @@ footer{background:var(--lz-cream);border-top:1px solid var(--lz-border);padding:
         <p class="hero-sub">Step-by-step attorney-designed documents for your most important legal needs — at a fraction of what attorneys charge. Court-ready. Fast. Guaranteed.</p>
         <div class="hero-actions">
           <a class="btn-hero-primary" href="#services" onclick="trackClick('Hero Primary')">Find My Legal Solution →</a>
-          <a class="btn-hero-secondary" href="/legalguide/legal-document-quiz.html" onclick="trackClick('Hero Quiz')">🧠 Free Quiz — What Do I Actually Need?</a>
+          <a class="btn-hero-secondary" href="https://wa.me/17186756729?text=Hi, I need help figuring out which legal service I need." target="_blank" onclick="trackClick('Hero WhatsApp')">💬 Free Help — Chat With Us on WhatsApp</a>
         </div>
         <div class="hero-trust">
           <span class="htrust">Court-ready documents</span>
@@ -362,7 +362,7 @@ footer{background:var(--lz-cream);border-top:1px solid var(--lz-border);padding:
       <!-- HERO CATEGORY TILES (LegalZoom style 6-tile grid) -->
       <div>
         <div class="hero-tiles">
-          <a class="tile urgent" href="/legalguide/immigration-court-relief.html" onclick="trackClick('Tile Immigration')">
+          <a class="tile urgent" href="http://easyimmigrationfiling.com/" target="_blank" onclick="trackClick('Tile Immigration')">
             <span class="tile-badge badge-urgent">Urgent</span>
             <div class="tile-label">Immigration<br>Court Relief</div>
             <div class="tile-sub">Missed hearing? Act now</div>
@@ -384,6 +384,24 @@ footer{background:var(--lz-cream);border-top:1px solid var(--lz-border);padding:
           <a class="tile" href="https://easydivorcefiling.gavel.io/portal/bundles/8773904c-ee28-4c41-a312-1cb0c4f32649" target="_blank" onclick="trackCheckout('Tile Prenup')">
             <div class="tile-label">Prenup &<br>postnup</div>
             <div class="tile-sub">All 50 states</div>
+            <div class="tile-arrow">→</div>
+          </a>
+          <a class="tile" href="https://easylegalfiling.com/askalawyer/" onclick="trackClick('Tile AskLawyer')">
+            <span class="tile-badge badge-free">Free</span>
+            <div class="tile-label">Ask a<br>lawyer</div>
+            <div class="tile-sub">Real answer, free</div>
+            <div class="tile-arrow">→</div>
+          </a>
+          <a class="tile" href="https://easylegalfiling.com/legaldocumentquiz/" onclick="trackClick('Tile Quiz')">
+            <span class="tile-badge badge-free">Free</span>
+            <div class="tile-label">Legal doc<br>quiz</div>
+            <div class="tile-sub">What do you need?</div>
+            <div class="tile-arrow">→</div>
+          </a>
+          <a class="tile" href="https://easylegalfiling.com/Relationship-Protection-Score/" onclick="trackClick('Tile RPS')">
+            <span class="tile-badge badge-free">Free</span>
+            <div class="tile-label">Relationship<br>score</div>
+            <div class="tile-sub">Are you protected?</div>
             <div class="tile-arrow">→</div>
           </a>
         </div>
@@ -417,23 +435,54 @@ footer{background:var(--lz-cream);border-top:1px solid var(--lz-border);padding:
       <span>·</span>
       <span>We charge <span class="save">$149</span> — NY-specific, attorney-designed</span>
       <span>·</span>
-      <a href="/legalguide/legalzoom-vs-easylegalfiling.html" onclick="trackClick('LZ Compare Bar')">See the full comparison →</a>
+      <a href="https://wa.me/17186756729?text=Hi, I want to know more about EasyLegalFiling." target="_blank" onclick="trackClick('LZ Compare Bar')">Chat with us free →</a>
     </div>
   </div>
 </div>
  
-<!-- QUIZ BANNER -->
-<div class="quiz-banner">
+ 
+ 
+<!-- FREE TOOLS SECTION -->
+<section style="background:var(--lz-cream);border-top:1px solid var(--lz-border);border-bottom:1px solid var(--lz-border);padding:56px 0">
   <div class="container">
-    <div class="quiz-banner-inner">
-      <div class="quiz-banner-text">
-        <h3>🧠 Not sure what you need?</h3>
-        <p>Take the free 2-minute Legal Document Quiz — it tells you exactly which documents protect you based on your life situation. Covers divorce, estate, immigration, prenup, and more.</p>
-      </div>
-      <a class="btn-quiz" href="/legalguide/legal-document-quiz.html" onclick="trackClick('Quiz Banner')">Take the Free Quiz →</a>
+    <div class="section-label">Free for Everyone</div>
+    <h2 class="section-title reveal" style="margin-bottom:10px">Three Free Tools That Change Everything</h2>
+    <p class="section-sub reveal" style="margin-bottom:36px">No account. No credit card. No catch. Start with any of these and know exactly where you stand before spending a dollar.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+ 
+      <!-- ASK A LAWYER -->
+      <a href="https://easylegalfiling.com/askalawyer/" onclick="trackClick('Free Tool Ask')" style="display:flex;flex-direction:column;background:#fff;border:1.5px solid var(--lz-border);border-radius:var(--r-xl);padding:28px 24px;text-decoration:none;transition:border-color var(--t),box-shadow var(--t),transform var(--t)" onmouseover="this.style.borderColor='var(--purple)';this.style.boxShadow='0 16px 48px rgba(75,42,173,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--lz-border)';this.style.boxShadow='none';this.style.transform='none'">
+        <div style="width:52px;height:52px;background:var(--purple-pale);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px">⚖️</div>
+        <div style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:var(--lz-orange);margin-bottom:8px">Free · Instant Answer</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--lz-dark);margin-bottom:8px;line-height:1.3">Ask a Legal Question.<br>Get a Real Answer — Free.</div>
+        <div style="font-size:.87rem;color:var(--lz-warm-gray);line-height:1.7;flex:1">Ask anything about divorce, estate, immigration, prenup, or any legal matter. Get an instant attorney-designed answer. No account. No appointment.</div>
+        <div style="margin-top:18px;display:inline-flex;align-items:center;gap:7px;font-size:.88rem;font-weight:700;color:var(--purple)">Ask Your Question Free <span>→</span></div>
+      </a>
+ 
+      <!-- LEGAL DOCUMENT QUIZ -->
+      <a href="https://easylegalfiling.com/legaldocumentquiz/" onclick="trackClick('Free Tool Quiz')" style="display:flex;flex-direction:column;background:#fff;border:1.5px solid var(--lz-border);border-radius:var(--r-xl);padding:28px 24px;text-decoration:none;transition:border-color var(--t),box-shadow var(--t),transform var(--t)" onmouseover="this.style.borderColor='var(--purple)';this.style.boxShadow='0 16px 48px rgba(75,42,173,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--lz-border)';this.style.boxShadow='none';this.style.transform='none'">
+        <div style="width:52px;height:52px;background:var(--amber-pale);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px">🧠</div>
+        <div style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:var(--lz-orange);margin-bottom:8px">Free · 2 Minutes</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--lz-dark);margin-bottom:8px;line-height:1.3">What Legal Documents Do<br>You Actually Need?</div>
+        <div style="font-size:.87rem;color:var(--lz-warm-gray);line-height:1.7;flex:1">8 quick questions about your life situation. We tell you exactly which documents protect you — and which gaps could cost your family thousands.</div>
+        <div style="margin-top:18px;display:inline-flex;align-items:center;gap:7px;font-size:.88rem;font-weight:700;color:var(--purple)">Take the Free Quiz <span>→</span></div>
+      </a>
+ 
+      <!-- RELATIONSHIP PROTECTION SCORE -->
+      <a href="https://easylegalfiling.com/Relationship-Protection-Score/" onclick="trackClick('Free Tool RPS')" style="display:flex;flex-direction:column;background:#fff;border:1.5px solid var(--lz-border);border-radius:var(--r-xl);padding:28px 24px;text-decoration:none;transition:border-color var(--t),box-shadow var(--t),transform var(--t)" onmouseover="this.style.borderColor='var(--purple)';this.style.boxShadow='0 16px 48px rgba(75,42,173,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--lz-border)';this.style.boxShadow='none';this.style.transform='none'">
+        <div style="width:52px;height:52px;background:var(--green-lt);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px">💑</div>
+        <div style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:var(--lz-orange);margin-bottom:8px">Free · Instant Score</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--lz-dark);margin-bottom:8px;line-height:1.3">Relationship Protection<br>Score — Are You Protected?</div>
+        <div style="font-size:.87rem;color:var(--lz-warm-gray);line-height:1.7;flex:1">Find out how legally protected your relationship really is. Whether you're married, engaged, or a long-term partner — this score reveals what's missing before it's too late.</div>
+        <div style="margin-top:18px;display:inline-flex;align-items:center;gap:7px;font-size:.88rem;font-weight:700;color:var(--purple)">Get My Score Free <span>→</span></div>
+      </a>
+ 
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <p style="font-size:.82rem;color:var(--lz-warm-gray)">All three tools are completely free — no account, no credit card, no pressure. Powered by Ettrick Campbell, Esq. · EasyLegalFiling.com</p>
     </div>
   </div>
-</div>
+</section>
  
 <!-- SERVICES -->
 <section class="services-section" id="services">
@@ -543,13 +592,28 @@ footer{background:var(--lz-cream);border-top:1px solid var(--lz-border);padding:
           </div>
         </div>
         <div class="svc-card-body" style="flex-direction:row;align-items:center;flex-wrap:wrap;gap:12px">
-          <a class="btn-svc-primary orange" href="/legalguide/health-care-directive.html" onclick="trackClick('Health CTA')" style="flex:1;min-width:220px">
-            See My Completed Directive — Free Preview <span class="arrow">→</span>
+          <a class="btn-svc-primary orange" href="https://wa.me/17186756729?text=Hi, I need help with a Health Care Directive." target="_blank" onclick="trackClick('Health CTA')" style="flex:1;min-width:220px">
+            💬 Ask About Health Care Directive — Free <span class="arrow">→</span>
           </a>
           <a class="btn-svc-free" href="https://wa.me/17186756729" target="_blank" style="flex:1;min-width:180px">
             <span>💬 Questions? Chat free on WhatsApp</span>
             <span class="arrow">→</span>
           </a>
+        </div>
+      </div>
+ 
+ 
+      <!-- FREE TOOLS ROW — full width -->
+      <div style="grid-column:1/-1;background:linear-gradient(135deg,var(--purple-dk) 0%,#1a3a2a 100%);border-radius:var(--r-xl);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+        <div>
+          <div style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#c4b5fd;margin-bottom:8px">🆓 Free for Everyone</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:5px">Not sure where to start? Try our free tools first.</div>
+          <div style="font-size:.87rem;color:rgba(255,255,255,.55)">Ask a lawyer · Take the document quiz · Get your relationship protection score</div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0">
+          <a href="https://easylegalfiling.com/askalawyer/" onclick="trackClick('Grid Ask')" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-weight:700;font-size:.83rem;padding:11px 16px;border-radius:var(--r);text-decoration:none;transition:background .18s ease;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,.22)'" onmouseout="this.style.background='rgba(255,255,255,.12)'">⚖️ Ask a Lawyer →</a>
+          <a href="https://easylegalfiling.com/legaldocumentquiz/" onclick="trackClick('Grid Quiz')" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-weight:700;font-size:.83rem;padding:11px 16px;border-radius:var(--r);text-decoration:none;transition:background .18s ease;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,.22)'" onmouseout="this.style.background='rgba(255,255,255,.12)'">🧠 Doc Quiz →</a>
+          <a href="https://easylegalfiling.com/Relationship-Protection-Score/" onclick="trackClick('Grid RPS')" style="background:var(--lz-orange);border:1px solid var(--lz-orange);color:#fff;font-weight:700;font-size:.83rem;padding:11px 16px;border-radius:var(--r);text-decoration:none;transition:opacity .18s ease;white-space:nowrap" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">💑 Relationship Score →</a>
         </div>
       </div>
  
@@ -675,7 +739,7 @@ footer{background:var(--lz-cream);border-top:1px solid var(--lz-border);padding:
       <div>
         <div class="faq-item">
           <button class="faq-question">What if I don't know which document I need? <span class="faq-arrow">▾</span></button>
-          <div class="faq-answer">Take our free Legal Document Quiz — it asks 8 questions about your life situation and tells you exactly which documents protect you. Or chat with us free on WhatsApp and we'll point you in the right direction immediately.</div>
+          <div class="faq-answer">Use our free Legal Document Quiz at easylegalfiling.com/legaldocumentquiz — it asks 8 questions about your life and tells you exactly which documents protect you. Or ask a specific question free at easylegalfiling.com/askalawyer. Both are completely free with no account required.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question">Are Will and POA services available outside New York? <span class="faq-arrow">▾</span></button>
@@ -713,23 +777,22 @@ footer{background:var(--lz-cream);border-top:1px solid var(--lz-border);padding:
           <li><a href="https://easydivorcefiling.gavel.io/portal/bundles/ea88bd85-278e-47bd-a6b5-4b9ca0890a32" target="_blank">NY Divorce — $149</a></li>
           <li><a href="https://easydivorcefiling.gavel.io/portal/bundles/f43856a4-c2b5-47ef-bd49-b265fa666d92" target="_blank">NY Estate / Probate — $149</a></li>
           <li><a href="https://easydivorcefiling.gavel.io/portal/bundles/8773904c-ee28-4c41-a312-1cb0c4f32649" target="_blank">NY Prenup — $149</a></li>
-          <li><a href="/legalguide/immigration-court-relief.html">Immigration Court Relief</a></li>
+          <li><a href="http://easyimmigrationfiling.com/" target="_blank">Immigration Court Relief</a></li>
           <li><a href="http://easyimmigrationfiling.com/" target="_blank">EasyImmigrationFiling.com</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Free Tools</div>
         <ul class="footer-links">
-          <li><a href="/legalguide/health-care-directive.html">Free Health Care Directive</a></li>
+          <li><a href="https://easylegalfiling.com/askalawyer/">⚖️ Ask a Lawyer — Free</a></li>
+          <li><a href="https://easylegalfiling.com/legaldocumentquiz/">🧠 Legal Document Quiz</a></li>
+          <li><a href="https://easylegalfiling.com/Relationship-Protection-Score/">💑 Relationship Protection Score</a></li>
           <li><a href="https://easylegalfiling.com/Inheritance-tool/" target="_blank">Free Inheritance Check</a></li>
-          <li><a href="/legalguide/legal-document-quiz.html">Free Legal Document Quiz</a></li>
-          <li><a href="/legalguide/ask-a-lawyer.html">Free Legal Q&amp;A</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Resources</div>
         <ul class="footer-links">
-          <li><a href="/legalguide/legalzoom-vs-easylegalfiling.html">vs. LegalZoom</a></li>
           <li><a href="/legalguide/divorce.html">NY Divorce Guide</a></li>
           <li><a href="/legalguide/estate.html">NY Estate Guide</a></li>
           <li><a href="https://wa.me/17186756729" target="_blank">WhatsApp Support</a></li>
@@ -772,7 +835,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 /* Social proof toasts */
 const toasts = [
   "📄 A client just started their divorce documents — saved $3,000",
-  "🧠 Someone just discovered they need 3 legal documents they didn't know about",
   "🛡️ A client just filed a motion to reopen their immigration case",
   "✅ Someone just completed their Immigration Safety Check — free",
   "💍 Someone just ran the free prenup risk check",
