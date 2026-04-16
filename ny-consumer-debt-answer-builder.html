@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NY Consumer Debt Answer Builder</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --border: #d9dee8;
+      --text: #152033;
+      --muted: #5a667a;
+      --accent: #0f62fe;
+      --accent-dark: #0b4fd1;
+      --soft: #eef4ff;
+      --danger: #b42318;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .topbar {
+      background: linear-gradient(135deg, #0f62fe, #1f7aff);
+      color: white;
+      padding: 28px 24px;
+    }
+    .topbar .inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .9;
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+    .subtitle {
+      max-width: 850px;
+      font-size: 16px;
+      opacity: .95;
+    }
+    .alert-prominent {
+      margin-top: 12px;
+      max-width: 900px;
+      background: rgba(180, 35, 24, .18);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .wrap {
+      max-width: 1240px;
+      margin: 24px auto;
+      padding: 0 20px 28px;
+      display: grid;
+      grid-template-columns: minmax(360px, 1fr) minmax(400px, 1.15fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 8px 24px rgba(17, 24, 39, .05);
+    }
+    h2 {
+      margin: 0 0 6px;
+      font-size: 22px;
+    }
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 16px;
+    }
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0 0 14px;
+    }
+    .note {
+      background: #fff8e6;
+      border: 1px solid #f1d28a;
+      color: #6c4e00;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    label {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+    input[type="text"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #c9d2e0;
+      border-radius: 12px;
+      padding: 11px 12px;
+      font: inherit;
+      color: var(--text);
+      background: white;
+    }
+    textarea { min-height: 92px; resize: vertical; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .checks {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fbfcfe;
+    }
+    .check input { margin-top: 3px; }
+    .check span {
+      font-size: 14px;
+      line-height: 1.35;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    button, .download-link {
+      appearance: none;
+      border: 0;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .primary:hover { background: var(--accent-dark); }
+    .secondary {
+      background: var(--soft);
+      color: var(--accent-dark);
+    }
+    .preview-shell {
+      position: sticky;
+      top: 16px;
+    }
+    .preview-toolbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .preview-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(17, 24, 39, .06);
+    }
+    .preview-header {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+      background: #fcfdff;
+    }
+    .preview-header-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 4px;
+    }
+    .preview {
+      padding: 22px;
+      white-space: pre-wrap;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 15px;
+      line-height: 1.55;
+      min-height: 840px;
+    }
+    .steps {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .steps li { margin-bottom: 8px; }
+    .danger {
+      color: var(--danger);
+      font-weight: 700;
+    }
+    .footer-cta {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 14px;
+      background: #f5f9ff;
+      border: 1px solid #d3e3ff;
+    }
+    .cta-button {
+      margin-top: 10px;
+      display: inline-flex;
+      background: var(--accent);
+      color: #fff;
+    }
+    .key-terms {
+      margin-top: 10px;
+    }
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+    .modal.open { display: flex; }
+    .modal-card {
+      background: #fff;
+      width: min(760px, 100%);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 18px;
+      box-shadow: 0 10px 34px rgba(0,0,0,.18);
+    }
+    .modal-card h3 { margin-top: 0; }
+    .term-list { padding-left: 20px; margin: 10px 0; }
+    .term-list li { margin-bottom: 8px; }
+    @media (max-width: 980px) {
+      .wrap { grid-template-columns: 1fr; }
+      .preview-shell { position: static; }
+      .preview { min-height: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <div class="eyebrow">New York Consumer Debt • Brought to you by EasyLegalFiling.com</div>
+      <h1>Build Your Answer to a Consumer Credit Lawsuit</h1>
+      <div class="subtitle">Use simple selections to create a court-style answer with instructions. This page follows the structure of the New York written answer form for consumer credit cases, including general denial, service defenses, listed defenses, exempt income, and counterclaims.</div>
+      <div class="alert-prominent">⚠️ If you fail to answer in time, a default judgment can be entered against you. That can lead to bank account freezes and wage garnishment. Do not miss your response deadline.</div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="panel">
+      <h2>Fill in your information</h2>
+      <p class="small">As you type, the court-style preview updates on the right.</p>
+      <div class="note"><strong>Important:</strong> This tool helps organize a written answer in the style of the New York consumer credit answer form. Review everything carefully before using it.</div>
+
+      <div class="grid-2">
+        <div>
+          <label for="courtType">Court type</label>
+          <select id="courtType">
+            <option value="CIVIL COURT OF THE CITY OF NEW YORK">Civil Court of the City of New York</option>
+            <option value="SUPREME COURT OF THE STATE OF NEW YORK">Supreme Court of the State of New York</option>
+            <option value="CITY COURT">City Court</option>
+            <option value="DISTRICT COURT">District Court</option>
+            <option value="COUNTY COURT">County Court</option>
+          </select>
+        </div>
+        <div>
+          <label for="county">County</label>
+          <select id="county">
+            <option value="KINGS" selected>KINGS</option>
+            <option value="QUEENS">QUEENS</option>
+            <option value="NEW YORK">NEW YORK</option>
+            <option value="SUFFOLK">SUFFOLK</option>
+            <option value="BRONX">BRONX</option>
+            <option value="NASSAU">NASSAU</option>
+            <option value="WESTCHESTER">WESTCHESTER</option>
+            <option value="ERIE">ERIE</option>
+            <option value="MONROE">MONROE</option>
+            <option value="RICHMOND">RICHMOND</option>
+            <option value="ONONDAGA">ONONDAGA</option>
+            <option value="ORANGE">ORANGE</option>
+            <option value="ROCKLAND">ROCKLAND</option>
+            <option value="ALBANY">ALBANY</option>
+            <option value="DUTCHESS">DUTCHESS</option>
+            <option value="SARATOGA">SARATOGA</option>
+            <option value="ONEIDA">ONEIDA</option>
+            <option value="NIAGARA">NIAGARA</option>
+            <option value="BROOME">BROOME</option>
+            <option value="ULSTER">ULSTER</option>
+            <option value="SCHENECTADY">SCHENECTADY</option>
+            <option value="RENSSELAER">RENSSELAER</option>
+            <option value="CHAUTAUQUA">CHAUTAUQUA</option>
+            <option value="OSWEGO">OSWEGO</option>
+            <option value="ONTARIO">ONTARIO</option>
+            <option value="JEFFERSON">JEFFERSON</option>
+            <option value="ST. LAWRENCE">ST. LAWRENCE</option>
+            <option value="TOMPKINS">TOMPKINS</option>
+            <option value="PUTNAM">PUTNAM</option>
+            <option value="STEUBEN">STEUBEN</option>
+            <option value="WAYNE">WAYNE</option>
+            <option value="CHEMUNG">CHEMUNG</option>
+            <option value="SULLIVAN">SULLIVAN</option>
+            <option value="CLINTON">CLINTON</option>
+            <option value="CATTARAUGUS">CATTARAUGUS</option>
+            <option value="CAYUGA">CAYUGA</option>
+            <option value="MADISON">MADISON</option>
+            <option value="WARREN">WARREN</option>
+            <option value="LIVINGSTON">LIVINGSTON</option>
+            <option value="OTSEGO">OTSEGO</option>
+            <option value="COLUMBIA">COLUMBIA</option>
+            <option value="WASHINGTON">WASHINGTON</option>
+            <option value="HERKIMER">HERKIMER</option>
+            <option value="GENESEE">GENESEE</option>
+            <option value="FULTON">FULTON</option>
+            <option value="MONTGOMERY">MONTGOMERY</option>
+            <option value="TIOGA">TIOGA</option>
+            <option value="GREENE">GREENE</option>
+            <option value="ALLEGANY">ALLEGANY</option>
+            <option value="FRANKLIN">FRANKLIN</option>
+            <option value="CORTLAND">CORTLAND</option>
+            <option value="CHENANGO">CHENANGO</option>
+            <option value="DELAWARE">DELAWARE</option>
+            <option value="ORLEANS">ORLEANS</option>
+            <option value="WYOMING">WYOMING</option>
+            <option value="ESSEX">ESSEX</option>
+            <option value="SENECA">SENECA</option>
+            <option value="SCHOHARIE">SCHOHARIE</option>
+            <option value="LEWIS">LEWIS</option>
+            <option value="YATES">YATES</option>
+            <option value="SCHUYLER">SCHUYLER</option>
+            <option value="HAMILTON">HAMILTON</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label for="indexNumber">Index number</label>
+          <input id="indexNumber" type="text" value="12345/2026" />
+        </div>
+        <div>
+          <label for="courtDate">Court date (optional)</label>
+          <input id="courtDate" type="text" value="" placeholder="MM/DD/YYYY" />
+        </div>
+      </div>
+
+      <label for="plaintiff">Plaintiff</label>
+      <input id="plaintiff" type="text" value="ABC Funding LLC" />
+
+      <label for="defendant">Defendant</label>
+      <input id="defendant" type="text" value="John Doe" />
+
+      <label for="address">Your address</label>
+      <input id="address" type="text" value="123 Main Street, Brooklyn, New York 11201" />
+
+      <h3>Basic answer</h3>
+      <div class="checks">
+        <label class="check"><input type="checkbox" id="generalDenial" checked><span>General denial: I deny the allegations in the complaint.</span></label>
+      </div>
+
+      <h3>Service defenses</h3>
+      <div class="checks">
+        <label class="check"><input type="checkbox" class="defense" value="I did not receive a copy of the Summons and Complaint."><span>I did not receive a copy of the Summons and Complaint.</span></label>
+        <label class="check"><input type="checkbox" class="defense" value="I received the Summons and Complaint, but service was not correct as required by law."><span>I received the Summons and Complaint, but service was not correct as required by law.</span></label>
+      </div>
+
+      <h3>Defenses</h3>
+      <div class="checks">
+        <label class="check"><input type="checkbox" class="defense" value="It is not my debt. I am a victim of identity theft or mistaken identity."><span>It is not my debt. I am a victim of identity theft or mistaken identity.</span></label>
+        <label class="check"><input type="checkbox" class="defense" value="I have paid all or part of the alleged debt."><span>I have paid all or part of the alleged debt.</span></label>
+        <label class="check"><input type="checkbox" class="defense" value="I dispute the amount of the debt."><span>I dispute the amount of the debt.</span></label>
+        <label class="check"><input type="checkbox" class="defense" value="I had no business dealings with Plaintiff (Plaintiff lacks standing)."><span>I had no business dealings with Plaintiff (Plaintiff lacks standing).</span></label>
+        <label class="check"><input type="checkbox" class="defense" value="Statute of limitations: the time has passed to sue on this debt."><span>Statute of limitations: the time has passed to sue on this debt.</span></label>
+        <label class="check"><input type="checkbox" class="defense" value="This debt has been discharged in bankruptcy."><span>This debt has been discharged in bankruptcy.</span></label>
+        <label class="check"><input type="checkbox" class="defense" value="Violation of the duty of good faith and fair dealing."><span>Violation of the duty of good faith and fair dealing.</span></label>
+        <label class="check"><input type="checkbox" class="defense" value="Unconscionability: the contract is unfair."><span>Unconscionability: the contract is unfair.</span></label>
+        <label class="check"><input type="checkbox" class="defense" value="Defendant is in the military."><span>Defendant is in the military.</span></label>
+      </div>
+
+      <label for="otherReason">Other reason / extra defense</label>
+      <textarea id="otherReason" placeholder="Add any other defense or brief explanation here."></textarea>
+
+      <label for="exemptIncome">Only source of income that is exempt from collection (optional)</label>
+      <input id="exemptIncome" type="text" placeholder="Example: Social Security disability" />
+
+      <div class="grid-2">
+        <div>
+          <label for="counterAmount">Counterclaim amount (optional)</label>
+          <input id="counterAmount" type="text" placeholder="$0.00" />
+        </div>
+        <div>
+          <label for="counterReason">Counterclaim reason (optional)</label>
+          <input id="counterReason" type="text" placeholder="Example: unlawful collection activity" />
+        </div>
+      </div>
+
+      <label for="explanation">Short explanation for your case (optional)</label>
+      <textarea id="explanation">I dispute the amount claimed and I do not believe the plaintiff has shown that it owns the debt.</textarea>
+
+      <h3>Instructions</h3>
+      <ol class="steps">
+        <li>Review the preview carefully and make sure the names, county, and index number are correct.</li>
+        <li>Print the completed answer.</li>
+        <li>Sign the answer. If the complaint you received was verified, sign in front of a notary.</li>
+        <li>Make copies for yourself, the plaintiff’s attorney, and any other parties.</li>
+        <li>Have someone other than you mail or deliver a copy to the plaintiff’s attorney.</li>
+        <li>File the answer with the court clerk. Bring or file proof of service if required.</li>
+      </ol>
+      <button class="secondary key-terms" id="definitionsBtn" type="button">Definition of key terms</button>
+      <p class="small danger">Do not ignore deadlines. Missing the deadline can lead to a default judgment.</p>
+
+      <div class="actions">
+        <button class="primary" id="downloadBtn" type="button">Download and File Today</button>
+        <button class="secondary" id="printBtn" type="button">Print This Page</button>
+      </div>
+
+      <div class="footer-cta">
+        <strong>Discover more forms from EasyLegalFiling.com.</strong><br>
+        Access free forms plus immigration, Surrogate’s Court, divorce, prenup/postnup, and more in one place.
+        <br>
+        <a class="cta-button" href="https://easylegalfiling.com" target="_blank" rel="noopener">Explore EasyLegalFiling.com Forms</a>
+      </div>
+    </div>
+
+    <div class="preview-shell">
+      <div class="preview-toolbar">
+        <div>
+          <h2 style="margin:0;">Live court-style preview</h2>
+          <p class="small" style="margin:4px 0 0;">Updates instantly as the user fills the form.</p>
+        </div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-header">
+          <div class="preview-header-title">Written Answer — Consumer Credit Transaction</div>
+          <div class="small">Use this preview to review the document before printing or downloading.</div>
+        </div>
+        <div id="preview" class="preview"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="termsModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+      <h3 id="termsTitle">Definition of key terms</h3>
+      <ul class="term-list">
+        <li><strong>Service defenses:</strong> Reasons you challenge how you were served with court papers.</li>
+        <li><strong>Defenses:</strong> Legal reasons the plaintiff should not win all or part of the claim.</li>
+        <li><strong>Other reason / extra defense:</strong> Additional defense not listed in the standard checkboxes.</li>
+        <li><strong>Only source of income that is exempt from collection (optional):</strong> Protected income (for example certain benefits) that may be shielded from collection.</li>
+        <li><strong>Counterclaim amount (optional):</strong> Dollar amount you claim the plaintiff owes you.</li>
+        <li><strong>Counterclaim reason (optional):</strong> Why you believe the plaintiff is liable to you.</li>
+        <li><strong>Short explanation for your case (optional):</strong> Brief summary of your side of the case in plain language.</li>
+      </ul>
+      <button class="secondary" id="closeTermsBtn" type="button">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/REPLACE_WITH_YOUR_STRIPE_PAYMENT_LINK';
+
+    function getCheckedValues(selector) {
+      return Array.from(document.querySelectorAll(selector + ':checked')).map(el => el.value);
+    }
+
+    function formatCheckboxLine(checked, number, text) {
+      return (checked ? '[X] ' : '[ ] ') + number + '. ' + text;
+    }
+
+    function buildPreview() {
+      const courtType = document.getElementById('courtType').value;
+      const county = document.getElementById('county').value.trim() || '____________________';
+      const indexNumber = document.getElementById('indexNumber').value.trim() || '______________________';
+      const courtDate = document.getElementById('courtDate').value.trim();
+      const plaintiff = document.getElementById('plaintiff').value.trim() || '____________________________';
+      const defendant = document.getElementById('defendant').value.trim() || '____________________________';
+      const address = document.getElementById('address').value.trim() || '____________________________';
+      const generalDenial = document.getElementById('generalDenial').checked;
+      const explanation = document.getElementById('explanation').value.trim();
+      const otherReason = document.getElementById('otherReason').value.trim();
+      const exemptIncome = document.getElementById('exemptIncome').value.trim();
+      const counterAmount = document.getElementById('counterAmount').value.trim();
+      const counterReason = document.getElementById('counterReason').value.trim();
+      const checked = getCheckedValues('.defense');
+
+      const service1 = checked.includes('I did not receive a copy of the Summons and Complaint.');
+      const service2 = checked.includes('I received the Summons and Complaint, but service was not correct as required by law.');
+      const d4 = checked.includes('It is not my debt. I am a victim of identity theft or mistaken identity.');
+      const d5 = checked.includes('I have paid all or part of the alleged debt.');
+      const d6 = checked.includes('I dispute the amount of the debt.');
+      const d7 = checked.includes('I had no business dealings with Plaintiff (Plaintiff lacks standing).');
+      const d10 = checked.includes('Statute of limitations: the time has passed to sue on this debt.');
+      const d11 = checked.includes('This debt has been discharged in bankruptcy.');
+      const d16 = checked.includes('Violation of the duty of good faith and fair dealing.');
+      const d17 = checked.includes('Unconscionability: the contract is unfair.');
+      const d20 = checked.includes('Defendant is in the military.');
+
+      const lines = [];
+      lines.push(`${courtType}                                     Index Number: ${indexNumber}`);
+      lines.push(`COUNTY OF ${county}`);
+      lines.push('---------------------------------');
+      lines.push(` ${plaintiff},`);
+      lines.push('                               Plaintiff(s)');
+      lines.push('');
+      lines.push('              -against-                       WRITTEN ANSWER');
+      lines.push('                                              CONSUMER CREDIT TRANSACTION');
+      lines.push(`${defendant},`);
+      lines.push('                             Defendant(s)');
+      lines.push('---------------------------------');
+      lines.push('');
+      lines.push('ANSWER: (Check all that apply)');
+      lines.push(formatCheckboxLine(generalDenial, '1', 'General Denial: I deny the allegations in the Complaint.'));
+      lines.push('SERVICE');
+      lines.push(formatCheckboxLine(service1, '2', 'I did not receive a copy of the Summons and Complaint.'));
+      lines.push(formatCheckboxLine(service2, '3', 'I received the Summons and Complaint, but service was not correct as required by law.'));
+      lines.push('DEFENSES');
+      lines.push(formatCheckboxLine(d4, '4', 'It is not my debt. I am a victim of identity theft or mistaken identity.'));
+      lines.push(formatCheckboxLine(d5, '5', 'I have paid all or part of the alleged debt.'));
+      lines.push(formatCheckboxLine(d6, '6', 'I dispute the amount of the debt.'));
+      lines.push(formatCheckboxLine(d7, '7', 'I had no business dealings with Plaintiff (Plaintiff lacks standing).'));
+      lines.push(formatCheckboxLine(d10, '10', 'Statute of limitations (the time has passed to sue on this debt).'));
+      lines.push(formatCheckboxLine(d11, '11', 'This debt has been discharged in bankruptcy.'));
+      lines.push(formatCheckboxLine(d16, '16', 'Violation of the duty of good faith and fair dealing.'));
+      lines.push(formatCheckboxLine(d17, '17', 'Unconscionability (the contract is unfair).'));
+      lines.push(formatCheckboxLine(d20, '20', 'Defendant is in the military.'));
+      lines.push('[ ] 21. Other Reasons ' + (otherReason || '_____________________________________________'));
+      lines.push('[ ] 22. Please take notice that my only source of income is ' + (exemptIncome || '___________________') + ', which is exempt from collection.');
+      lines.push('COUNTERCLAIM(S)');
+      lines.push('[ ] 23. Counterclaim(s): ' + (counterAmount || '__________________') + ' Reason: ' + (counterReason || '_____________________________________________'));
+      lines.push('');
+      if (explanation) {
+        lines.push('SHORT EXPLANATION:');
+        lines.push(explanation);
+        lines.push('');
+      }
+      lines.push('VERIFICATION');
+      lines.push('State of New York, County of ' + county + ' ss:');
+      lines.push(`${defendant}, being duly sworn, deposes and says: I have read the Answer in Writing and know the contents to be true from my own knowledge, except as to those matters stated on information and belief, and as to those matters I believe them to be true.`);
+      lines.push('');
+      lines.push('Sworn to before me this _____ day of _______________, 20___.');
+      lines.push('');
+      lines.push('____________________________________________');
+      lines.push('Notary Public');
+      lines.push('');
+      lines.push('____________________________________________');
+      lines.push('Signature of Defendant');
+      lines.push('');
+      lines.push('Defendant\'s Address: ' + address);
+      lines.push('');
+      lines.push('This case is scheduled to appear on the court calendar as follows:');
+      lines.push('Date: ' + (courtDate || '____________') + '   Part: ____________   Room: ____________   Time: ____________');
+
+      const previewText = lines.join('\n');
+      document.getElementById('preview').textContent = previewText;
+      return previewText;
+    }
+
+    function downloadText() {
+      const text = buildPreview();
+      const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'consumer-debt-answer-preview.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function handleDownloadClick() {
+      const params = new URLSearchParams(window.location.search);
+      const paid = params.get('paid') === '1';
+      if (paid) {
+        downloadText();
+        params.delete('paid');
+        const newQuery = params.toString();
+        window.history.replaceState({}, '', newQuery ? `?${newQuery}` : window.location.pathname);
+        return;
+      }
+      window.location.href = STRIPE_CHECKOUT_URL;
+    }
+
+    function checkAutoDownloadAfterPayment() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('paid') === '1') {
+        downloadText();
+        params.delete('paid');
+        const newQuery = params.toString();
+        window.history.replaceState({}, '', newQuery ? `?${newQuery}` : window.location.pathname);
+      }
+    }
+
+    function openDefinitions() {
+      const modal = document.getElementById('termsModal');
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeDefinitions() {
+      const modal = document.getElementById('termsModal');
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    document.querySelectorAll('input, select, textarea').forEach(el => {
+      el.addEventListener('input', buildPreview);
+      el.addEventListener('change', buildPreview);
+    });
+
+    document.getElementById('downloadBtn').addEventListener('click', handleDownloadClick);
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+    document.getElementById('definitionsBtn').addEventListener('click', openDefinitions);
+    document.getElementById('closeTermsBtn').addEventListener('click', closeDefinitions);
+    document.getElementById('termsModal').addEventListener('click', (e) => {
+      if (e.target.id === 'termsModal') closeDefinitions();
+    });
+
+    buildPreview();
+    checkAutoDownloadAfterPayment();
+  </script>
+</body>
+</html>
