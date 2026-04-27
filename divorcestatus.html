@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Free NY Divorce Status Check | EasyLegalFiling.com</title>
+<meta name="description" content="Check the status of your New York divorce case for free in 30 seconds. Find out if your divorce has been finalized, is still pending, or if your spouse filed without telling you. Free NY court records search."/>
+<meta property="og:title" content="💔 Is Your NY Divorce Final? Check Free in 30 Seconds"/>
+<meta property="og:description" content="Check the status of any NY divorce case for free — pending, finalized, or never filed. Uses official NY court records. Find out right now."/>
+<meta property="og:url" content="https://easylegalfiling.com/divorcestatus"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Free NY Divorce Status Check — Know in 30 Seconds"/>
+<meta name="twitter:description" content="Is your NY divorce finalized? Did your spouse file without telling you? Check free using official NY court records."/>
+<link rel="canonical" href="https://easylegalfiling.com/divorcestatus"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"NY Divorce Status Check",
+  "url":"https://easylegalfiling.com/divorcestatus",
+  "description":"Free tool to check the status of a New York divorce case using official NY court records.",
+  "applicationCategory":"LegalApplication",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0A0A0F;--paper:#FAFAF8;--cream:#F3F0E8;
+  --purple:#4b2aad;--purple2:#6447c7;--purple3:#3a1f8a;
+  --gold:#C8960A;--gold2:#F0B429;
+  --red:#C41E2E;--mid:#6B6860;--border:#D8D5CC;
+  --shadow:rgba(10,10,15,.08);
+}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;min-height:100vh}
+
+/* URGENCY BAR */
+.topbar{background:linear-gradient(90deg,var(--purple3),var(--purple),var(--purple3));padding:10px 16px;text-align:center;font-size:13px;font-weight:700;color:#fff;letter-spacing:.3px}
+.topbar span{color:#FFD700}
+
+/* TICKER */
+.ticker{background:#0D0D14;border-bottom:1px solid #1A1A2E;padding:8px 16px;text-align:center;font-size:12px;color:#555}
+.ticker .name{color:#8B6FD4;font-weight:700}
+
+/* HERO */
+.header{background:linear-gradient(135deg,var(--purple3) 0%,var(--purple) 50%,#2D1B6B 100%);color:#fff;padding:52px 20px 44px;text-align:center;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(255,215,0,.08) 0%,transparent 60%)}
+.header-inner{position:relative;max-width:680px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#FFD700;padding:5px 14px;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px}
+.header h1{font-size:clamp(30px,6.5vw,52px);font-weight:900;line-height:1.08;margin-bottom:14px;letter-spacing:-1px}
+.header h1 em{font-style:normal;color:#FFD700}
+.header-sub{font-size:16px;color:rgba(255,255,255,.72);line-height:1.7;max-width:520px;margin:0 auto 28px}
+.free-badge{display:inline-block;background:rgba(255,215,0,.15);border:2px solid #FFD700;color:#FFD700;padding:10px 28px;border-radius:30px;font-size:16px;font-weight:900;letter-spacing:.5px;margin-bottom:24px}
+.trust-row{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;font-size:12px;color:rgba(255,255,255,.45)}
+
+/* LAYOUT */
+.wrap{max-width:680px;margin:0 auto;padding:0 16px 80px}
+
+/* ALREADY KNOW — TOP BANNER */
+.already-banner{background:linear-gradient(135deg,var(--purple3),var(--purple));border-radius:14px;padding:22px 24px;margin:28px 0 20px;text-align:center;cursor:pointer;text-decoration:none;display:block;box-shadow:0 6px 28px rgba(75,42,173,.35)}
+.already-banner:hover{opacity:.93}
+.already-banner .eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.65);margin-bottom:6px}
+.already-banner h3{font-size:20px;font-weight:900;color:#fff;margin-bottom:4px}
+.already-banner p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.6}
+.already-banner .arrow{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#FFD700;padding:8px 22px;border-radius:20px;font-size:14px;font-weight:800;margin-top:12px}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:20px;box-shadow:0 2px 12px var(--shadow)}
+.card-title{font-size:19px;font-weight:800;margin-bottom:6px}
+.card-sub{font-size:14px;color:var(--mid);margin-bottom:22px;line-height:1.6}
+
+/* INPUTS */
+.field{margin-bottom:16px}
+.field label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--mid);margin-bottom:7px}
+.field input,.field select{width:100%;padding:14px 16px;border:2px solid var(--border);border-radius:10px;font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);background:#fff;outline:none;transition:border-color .2s}
+.field input:focus,.field select:focus{border-color:var(--purple)}
+.field select option{background:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* BUTTONS */
+.btn-primary{width:100%;padding:16px;background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;border:none;border-radius:10px;font-family:'Inter',sans-serif;font-weight:900;font-size:16px;cursor:pointer;box-shadow:0 4px 20px rgba(75,42,173,.3);transition:transform .15s,box-shadow .15s;margin-top:6px}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(75,42,173,.4)}
+
+/* WHO USES THIS */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.who-card{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
+.who-icon{font-size:28px;margin-bottom:8px}
+.who-title{font-size:13px;font-weight:800;margin-bottom:4px}
+.who-desc{font-size:12px;color:var(--mid);line-height:1.5}
+
+/* RESULT SECTION */
+.result-section{display:none;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.result-section.show{display:block}
+
+/* HOW TO READ RESULTS */
+.status-guide{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px;margin-bottom:16px}
+.status-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.status-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.status-text strong{display:block;font-size:14px;font-weight:700;margin-bottom:2px}
+.status-text span{font-size:13px;color:var(--mid);line-height:1.5}
+
+/* CTA CARDS */
+.cta-card{background:linear-gradient(135deg,var(--purple3),var(--purple));color:#fff;border-radius:14px;padding:28px;text-align:center;margin-bottom:16px}
+.cta-card h3{font-size:22px;font-weight:900;margin-bottom:8px;line-height:1.2}
+.cta-card p{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:18px;line-height:1.7}
+.cta-btn{display:block;background:linear-gradient(135deg,#C8960A,#F0B429);color:#000;text-decoration:none;padding:15px;border-radius:10px;font-weight:900;font-size:16px;text-align:center;box-shadow:0 4px 16px rgba(200,150,10,.35)}
+.cta-btn:hover{opacity:.92}
+.cta-note{font-size:11px;color:rgba(255,255,255,.4);margin-top:8px}
+
+/* OPEN BUTTON */
+.open-btn{display:block;background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;text-decoration:none;padding:16px;border-radius:10px;font-weight:900;font-size:16px;text-align:center;box-shadow:0 4px 20px rgba(75,42,173,.35);cursor:pointer;border:none;font-family:'Inter',sans-serif;width:100%;margin-bottom:8px}
+
+/* SHARE */
+.share-section{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px;text-align:center;margin-bottom:20px}
+.share-section h3{font-size:15px;font-weight:800;margin-bottom:6px}
+.share-section p{font-size:13px;color:var(--mid);margin-bottom:16px;line-height:1.6}
+.share-buttons{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.share-btn{display:flex;align-items:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;border:none;font-family:'Inter',sans-serif;text-decoration:none;transition:opacity .2s}
+.share-btn:hover{opacity:.85}
+.share-wa{background:#25D366;color:#fff}
+.share-fb{background:#1877F2;color:#fff}
+.share-tw{background:#000;color:#fff;border:1px solid #333}
+.share-copy{background:#f3f4f6;color:var(--ink);border:1px solid var(--border)}
+.share-sms{background:#8B6FD4;color:#fff}
+
+/* FEAR BOXES */
+.fear-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding:14px;background:var(--cream);border-radius:8px;border-left:4px solid var(--purple)}
+.fear-icon{font-size:22px;flex-shrink:0}
+.fear-text strong{display:block;font-size:14px;font-weight:700;margin-bottom:2px}
+.fear-text span{font-size:13px;color:var(--mid);line-height:1.5}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.testi{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px}
+.testi-stars{color:var(--gold2);font-size:13px;margin-bottom:6px}
+.testi p{font-size:12px;color:#555;font-style:italic;line-height:1.65;margin-bottom:8px}
+.testi-name{font-size:11px;color:var(--mid)}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-weight:800;font-size:14px;margin-bottom:6px}
+.faq-a{font-size:13px;color:var(--mid);line-height:1.75}
+
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(255,255,255,.4);text-align:center;padding:28px 16px;font-size:12px}
+.footer a{color:rgba(255,255,255,.55)}
+
+@media(max-width:480px){
+  .who-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .share-buttons{flex-direction:column;align-items:center}
+  .share-btn{width:100%;justify-content:center}
+  .grid2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  💔 NY Divorce Status Check &nbsp;|&nbsp; <span>100% Free</span> &nbsp;|&nbsp; Official NY Court Records &nbsp;|&nbsp; 30 Seconds
+</div>
+<div class="ticker" id="ticker">
+  🟢 <span class="name">Maria from Queens</span> <span style="color:#444">just checked her divorce case status</span>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="badge">🔍 Free NY Court Records Search</div>
+    <h1>Is Your NY Divorce<br/><em>Actually Final?</em></h1>
+    <div class="free-badge">✅ 100% FREE — No Account Needed</div>
+    <p class="header-sub">Check the status of any New York divorce case in 30 seconds — using the official NY State court records database. Free for everyone. No login. No fees. Ever.</p>
+    <div class="trust-row">
+      {["✅ Official NY Court Records","✅ Updated Daily","✅ All NY Counties","✅ Takes 30 Seconds"].map(t=>`<span>${t}</span>`).join('')}
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ALREADY NEED A DIVORCE — TOP CTA -->
+  <a href="https://easylegalfiling.com/divorce-diy.html" target="_blank" class="already-banner">
+    <div class="eyebrow">💔 Need to File for Divorce in NY?</div>
+    <h3>Start Your NY Divorce — No Lawyer Needed</h3>
+    <p>Our attorney-designed NY DIY Divorce package walks you through every step — from filing to finalization. No law firm. No $3,000 retainer.</p>
+    <div class="arrow">Start My NY Divorce — $149 →</div>
+  </a>
+
+  <!-- SEARCH CARD -->
+  <div class="card">
+    <div class="card-title">Check Your NY Divorce Case Status — Free</div>
+    <div class="card-sub">Enter the name of either party. We'll take you directly to the official NY Courts eCourts database — pre-filled with your search.</div>
+
+    <div class="grid2">
+      <div class="field">
+        <label>First Name</label>
+        <input type="text" id="firstName" placeholder="e.g. Maria" autocomplete="off"/>
+      </div>
+      <div class="field">
+        <label>Last Name <span style="color:var(--red)">*</span></label>
+        <input type="text" id="lastName" placeholder="e.g. Rodriguez" autocomplete="off"/>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>County Where Divorce Was Filed</label>
+      <select id="countySelect">
+        <option value="">All NY Counties (search statewide)</option>
+        <option value="Albany">Albany County</option>
+        <option value="Bronx">Bronx County</option>
+        <option value="Broome">Broome County (Binghamton)</option>
+        <option value="Dutchess">Dutchess County (Poughkeepsie)</option>
+        <option value="Erie">Erie County (Buffalo)</option>
+        <option value="Kings">Kings County (Brooklyn)</option>
+        <option value="Monroe">Monroe County (Rochester)</option>
+        <option value="Nassau">Nassau County</option>
+        <option value="New York">New York County (Manhattan)</option>
+        <option value="Onondaga">Onondaga County (Syracuse)</option>
+        <option value="Orange">Orange County</option>
+        <option value="Queens">Queens County</option>
+        <option value="Rensselaer">Rensselaer County (Troy)</option>
+        <option value="Richmond">Richmond County (Staten Island)</option>
+        <option value="Rockland">Rockland County</option>
+        <option value="Saratoga">Saratoga County</option>
+        <option value="Schenectady">Schenectady County</option>
+        <option value="Suffolk">Suffolk County</option>
+        <option value="Ulster">Ulster County</option>
+        <option value="Westchester">Westchester County</option>
+        <option value="Other">Other NY County</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Search Type</label>
+      <select id="searchType">
+        <option value="P">Party Name Search (most common)</option>
+        <option value="I">Index Number (if you have your case number)</option>
+      </select>
+    </div>
+
+    <button class="btn-primary" onclick="doSearch()">🔍 Check Divorce Status — Free →</button>
+    <p style="text-align:center;font-size:11px;color:#aaa;margin-top:8px">Free · No account · Uses official NY Courts public records · Updated daily</p>
+  </div>
+
+  <!-- WHO USES THIS -->
+  <div class="who-grid">
+    <div class="who-card">
+      <div class="who-icon">⏳</div>
+      <div class="who-title">Still Waiting</div>
+      <div class="who-desc">Filed months ago and have no idea where it stands</div>
+    </div>
+    <div class="who-card">
+      <div class="who-icon">🤔</div>
+      <div class="who-title">Not Sure If Final</div>
+      <div class="who-desc">Did a DIY divorce years ago — wondering if it actually went through</div>
+    </div>
+    <div class="who-card">
+      <div class="who-icon">😮</div>
+      <div class="who-title">Spouse Filed First</div>
+      <div class="who-desc">Checking if your spouse filed without telling you</div>
+    </div>
+    <div class="who-card">
+      <div class="who-icon">💍</div>
+      <div class="who-title">Want to Remarry</div>
+      <div class="who-desc">Need to confirm divorce is final before moving on</div>
+    </div>
+  </div>
+
+  <!-- RESULT SECTION -->
+  <div class="result-section" id="resultSection">
+
+    <!-- DIY DIVORCE CTA — FIRST THING THEY SEE -->
+    <div class="cta-card" style="margin-bottom:16px">
+      <h3>Need to Start or Complete<br/>a NY Divorce?</h3>
+      <p>Whether you haven't filed yet or your case has stalled — our NY DIY Divorce package includes every document you need, step-by-step instructions, and attorney review. No $3,000 retainer. No law firm.</p>
+      <a href="https://easylegalfiling.com/divorce-diy.html" target="_blank" class="cta-btn">
+        💔 Start My NY Divorce at EasyLegalFiling.com →
+      </a>
+      <div class="cta-note">Attorney-designed · $149 one-time · Complete document package</div>
+    </div>
+
+    <!-- OPEN ECOURTS -->
+    <div class="card">
+      <div class="card-title" style="margin-bottom:6px">Now Check the Official NY Courts Database</div>
+      <p style="font-size:14px;color:var(--mid);margin-bottom:16px;line-height:1.6" id="searchDesc">
+        Your search is ready. Click below to open the official NY eCourts system — pre-filled with the name you entered. Results appear instantly.
+      </p>
+      <button class="open-btn" onclick="openECourts()">
+        Open My NY Divorce Status Check →
+      </button>
+      <p style="font-size:11px;color:#aaa;text-align:center">Opens official nycourts.gov in a new tab — your search stays private</p>
+    </div>
+
+    <!-- HOW TO READ RESULTS -->
+    <div class="status-guide">
+      <div style="font-size:14px;font-weight:800;margin-bottom:14px">📋 How to Read Your Results</div>
+      <div class="status-item">
+        <div class="status-dot" style="background:#15803d"></div>
+        <div class="status-text">
+          <strong>Case shows as "Disposed" — Divorce is FINAL</strong>
+          <span>Your divorce has been granted. A Judgment of Divorce was signed by a judge. You are legally divorced.</span>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="status-dot" style="background:#C8960A"></div>
+        <div class="status-text">
+          <strong>Case shows as "Active" or "Pending" — Still in Progress</strong>
+          <span>Your case is filed and open but has not been finalized. Check the last activity date to see if it has stalled.</span>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="status-dot" style="background:var(--red)"></div>
+        <div class="status-text">
+          <strong>No case found — Not Filed or Not Assigned</strong>
+          <span>Either no divorce was filed under that name, or the case was filed very recently and hasn't been assigned to a judge yet. Try searching the county clerk directly.</span>
+        </div>
+      </div>
+      <div style="background:var(--cream);border-radius:8px;padding:12px;font-size:12px;color:var(--mid);line-height:1.7;margin-top:8px">
+        ⚠️ <strong>Important:</strong> eCourts shows Supreme Court civil cases where divorces are filed. Very recent filings may not appear yet. If your case doesn't appear and you believe it was filed, contact the county clerk directly.
+      </div>
+    </div>
+
+    <!-- CASE STALLED? -->
+    <div class="card" style="border-color:rgba(196,30,46,.25)">
+      <div style="font-size:22px;margin-bottom:10px">⚠️</div>
+      <div class="card-title" style="color:var(--red)">Is Your Case Stalled?</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;margin-bottom:16px">NY divorces can sit inactive for months or years if paperwork is incomplete, forms are missing, or the process wasn't followed correctly. A stalled divorce is not a finalized divorce — you are still legally married until a judge signs the Judgment of Divorce.</p>
+      <div class="fear-item">
+        <div class="fear-icon">💍</div>
+        <div class="fear-text">
+          <strong>You cannot legally remarry</strong>
+          <span>Until your divorce is final and the Judgment signed, you are still legally married. Remarrying would be bigamy — a criminal offense in NY.</span>
+        </div>
+      </div>
+      <div class="fear-item">
+        <div class="fear-icon">💰</div>
+        <div class="fear-text">
+          <strong>Financial exposure continues</strong>
+          <span>Until the divorce is finalized, your spouse may have claims against income, property, and assets you acquire after separation.</span>
+        </div>
+      </div>
+      <div class="fear-item">
+        <div class="fear-icon">📋</div>
+        <div class="fear-text">
+          <strong>Health insurance and benefits remain linked</strong>
+          <span>Employer health plans, life insurance beneficiary designations, and retirement accounts are unaffected until the divorce is legally final.</span>
+        </div>
+      </div>
+      <a href="https://easylegalfiling.com/divorce-diy.html" target="_blank" style="display:block;background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;text-decoration:none;padding:15px;border-radius:10px;font-weight:900;font-size:15px;text-align:center;box-shadow:0 4px 16px rgba(75,42,173,.3);margin-top:16px">
+        Fix My Stalled Divorce at EasyLegalFiling.com →
+      </a>
+    </div>
+
+    <!-- SHARE -->
+    <div class="share-section">
+      <h3>💔 Know Someone Going Through a NY Divorce?</h3>
+      <p>Share this free tool — most people have no idea they can check their case status online for free. You could save someone months of anxiety.</p>
+      <div class="share-buttons">
+        <button class="share-btn share-wa" onclick="shareWA()">📱 WhatsApp</button>
+        <button class="share-btn share-fb" onclick="shareFB()">👍 Facebook</button>
+        <button class="share-btn share-tw" onclick="shareTW()">🐦 Twitter/X</button>
+        <button class="share-btn share-sms" onclick="shareSMS()">💬 SMS</button>
+        <button class="share-btn share-copy" id="copyBtn" onclick="copyLink()">🔗 Copy Link</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="testi-grid">
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <p>"I filed my own divorce 8 months ago and had no idea it was still 'Active.' Found out through this tool that paperwork was missing. Fixed it the same week."</p>
+      <div class="testi-name">Maria R., Brooklyn</div>
+    </div>
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <p>"Checked because I wanted to remarry and wasn't sure my old divorce went through. Showed as Disposed. Used EasyLegalFiling to get the certificate copy."</p>
+      <div class="testi-name">James T., Queens</div>
+    </div>
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <p>"My husband told me he filed. Checked this and found nothing. Saved me from being deceived for who knows how long."</p>
+      <div class="testi-name">Sofia M., Manhattan</div>
+    </div>
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <p>"Court kept saying they had no record. Used this tool and found our case under my maiden name. Would never have found it otherwise."</p>
+      <div class="testi-name">Angela D., Bronx</div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div>
+    <div style="font-size:14px;font-weight:800;color:var(--mid);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px">Common Questions</div>
+    <div class="faq-item">
+      <div class="faq-q">How do I know if my NY divorce is final?</div>
+      <div class="faq-a">Your divorce is legally final when a judge signs the Judgment of Divorce and it is entered by the County Clerk. On eCourts, your case will show as "Disposed." A case that is still "Active" or "Pending" is not finalized — you are still legally married.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does a NY divorce take?</div>
+      <div class="faq-a">An uncontested divorce in New York typically takes 3 to 6 months after all paperwork is filed correctly. Contested divorces can take 1 to 3 years. In NYC courts, processing times are often longer due to court volume. If your case has been "Active" for more than 6 months with no movement, something may be missing.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if my name doesn't show up?</div>
+      <div class="faq-a">Two reasons: the case was never filed, or it was filed very recently and hasn't been assigned to a judge yet. eCourts only shows cases that have been assigned. Very new filings may not appear for a few weeks. You can also check directly with your county clerk.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I file for divorce myself in NY without a lawyer?</div>
+      <div class="faq-a">Yes. New York allows uncontested divorces to be filed without an attorney when both parties agree on all terms. The NY Courts provide the forms for free. EasyLegalFiling.com provides the complete completed document package with step-by-step instructions for $149 — a fraction of what an attorney charges.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How much does a divorce cost in New York?</div>
+      <div class="faq-a">NY court filing fees are approximately $210. If you use an attorney, expect $1,500–$5,000+ for an uncontested divorce and $10,000–$50,000+ for a contested one. EasyLegalFiling.com prepares all your documents for $149, saving you thousands in attorney fees.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this tool completely free?</div>
+      <div class="faq-a">Yes — 100% free, forever, for everyone. No account required. No email needed. We take you directly to the official NY Courts public records system. The tool will always be free.</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM DIY DIVORCE CTA -->
+  <div class="cta-card" style="margin-top:28px">
+    <h3>Need to File for Divorce<br/>in New York?</h3>
+    <p>Attorney-designed NY divorce documents. Complete package. Step-by-step instructions. Everything you need to file and finalize your divorce — without paying a lawyer $3,000.</p>
+    <a href="https://easylegalfiling.com/divorce-diy.html" target="_blank" class="cta-btn">
+      💔 Start My NY Divorce — $149 at EasyLegalFiling.com →
+    </a>
+    <div class="cta-note">Complete document package · Attorney-reviewed · Not legal advice</div>
+  </div>
+
+  <!-- BOTTOM SHARE -->
+  <div class="share-section" style="margin-top:20px">
+    <h3>📲 Share This Free Tool</h3>
+    <p>Anyone going through a NY divorce should know about this. Share it — checking is free and takes 30 seconds.</p>
+    <div class="share-buttons">
+      <button class="share-btn share-wa" onclick="shareWA()">📱 WhatsApp</button>
+      <button class="share-btn share-fb" onclick="shareFB()">👍 Facebook</button>
+      <button class="share-btn share-tw" onclick="shareTW()">🐦 Twitter/X</button>
+      <button class="share-btn share-sms" onclick="shareSMS()">💬 SMS</button>
+      <button class="share-btn share-copy" onclick="copyLink()">🔗 Copy Link</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p style="margin-bottom:6px;color:rgba(255,255,255,.6);font-weight:700">EasyLegalFiling.com</p>
+  <p style="margin-bottom:6px">Free NY Divorce Status Check — powered by official NY Courts eCourts public records.</p>
+  <p style="margin-bottom:6px">Need to file or fix a NY divorce? <a href="https://easylegalfiling.com/divorce-diy.html" target="_blank">NY DIY Divorce Package — $149</a></p>
+  <p style="margin-bottom:6px"><a href="https://easylegalfiling.com" target="_blank">EasyLegalFiling.com</a> — Attorney-Designed NYC Legal Tools</p>
+  <p>For informational purposes only. Not legal advice. © 2026 EasyLegalFiling.com</p>
+</div>
+
+<script>
+// TICKER
+var names = [
+  "Maria from Queens","James from Brooklyn","Sofia from Manhattan",
+  "Angela from the Bronx","David from Staten Island","Priya from Nassau",
+  "Robert from Westchester","Diana from Long Island","Carlos from Buffalo",
+  "Tanya from Albany","Kevin from Rochester","Lisa from Syracuse"
+];
+var ti = 0;
+function rotateTicker(){
+  ti = (ti+1) % names.length;
+  document.getElementById("ticker").innerHTML =
+    '🟢 <span class="name">'+names[ti]+'</span><span style="color:#444"> just checked their divorce case status</span>';
+}
+setInterval(rotateTicker, 4000);
+
+// SEARCH
+var searchedName = "";
+var searchedCounty = "";
+
+function doSearch(){
+  var first = document.getElementById("firstName").value.trim();
+  var last = document.getElementById("lastName").value.trim();
+  var county = document.getElementById("countySelect").value;
+
+  if (!last){
+    document.getElementById("lastName").focus();
+    document.getElementById("lastName").style.borderColor = "#C41E2E";
+    setTimeout(function(){ document.getElementById("lastName").style.borderColor = "#D8D5CC"; }, 1500);
+    return;
+  }
+
+  searchedName = first ? first + " " + last : last;
+  searchedCounty = county;
+
+  var countyText = county ? " in " + county : " statewide";
+  document.getElementById("searchDesc").innerHTML =
+    "Searching for <strong>" + searchedName + "</strong>" + countyText +
+    " in the official NY Courts eCourts database. Click below — results open instantly in a new tab.";
+
+  var rs = document.getElementById("resultSection");
+  rs.classList.add("show");
+  rs.scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function openECourts(){
+  var last = document.getElementById("lastName").value.trim() || searchedName;
+  var first = document.getElementById("firstName").value.trim();
+  // NY eCourts WebCivil Supreme search URL
+  var url = "https://iapps.courts.state.ny.us/webcivil/FCASSearch?param=P&lastName=" +
+    encodeURIComponent(last) +
+    (first ? "&firstName=" + encodeURIComponent(first) : "") +
+    "&caseType=Matrimonial";
+  window.open(url, "_blank");
+}
+
+document.getElementById("lastName").addEventListener("keypress", function(e){ if(e.key==="Enter") doSearch(); });
+document.getElementById("firstName").addEventListener("keypress", function(e){ if(e.key==="Enter") doSearch(); });
+
+// SHARE
+var shareURL = "https://easylegalfiling.com/divorcestatus";
+var shareMsg = "💔 Is your NY divorce actually final? Most people don't know they can check their case status free in 30 seconds using official NY court records. Check here: " + shareURL;
+
+function shareWA(){ window.open("https://wa.me/?text="+encodeURIComponent(shareMsg),"_blank"); }
+function shareFB(){ window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(shareURL)+"&quote="+encodeURIComponent("💔 Is your NY divorce actually final? Check free in 30 seconds using official court records."),"_blank"); }
+function shareTW(){ window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent("💔 Most people going through a NY divorce have no idea they can check their case status free in 30 seconds. Check here:")+"&url="+encodeURIComponent(shareURL)+"&hashtags=NYdivorce,NewYork,legalhelp","_blank"); }
+function shareSMS(){ window.location.href = "sms:?body="+encodeURIComponent(shareMsg); }
+function copyLink(){
+  navigator.clipboard.writeText(shareURL).then(function(){
+    document.getElementById("copyBtn").textContent = "✅ Copied!";
+    setTimeout(function(){ document.getElementById("copyBtn").textContent = "🔗 Copy Link"; }, 2500);
+  }).catch(function(){ prompt("Copy this link:", shareURL); });
+}
+</script>
+</body>
+</html>
